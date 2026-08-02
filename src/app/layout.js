@@ -10,8 +10,16 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Mekanika Kuantum | Belajar Fisika",
-  description: "Platform pembelajaran fisika kuantum modern, dari probabilitas hingga persamaan Schrödinger.",
+  title: "Mafia Kumat | Fisika Kuantum Material",
+  description: "Platform pembelajaran komprehensif dari komunitas Mafia Kumat. Eksplorasi matematika esensial, fisika kuantum, hingga sains material modern.",
+  openGraph: {
+    title: "Mafia Kumat | Fisika Kuantum Material",
+    description: "Platform pembelajaran komprehensif dari komunitas Mafia Kumat.",
+    url: "https://mafia-kumat.netlify.app",
+    siteName: "Mafia Kumat",
+    locale: "id_ID",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {
