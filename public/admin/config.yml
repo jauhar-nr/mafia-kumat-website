@@ -2,7 +2,7 @@ local_backend: true
 backend:
   name: github
   repo: mafia-kumat/mafia-kumat-website
-  branch: main
+  branch: master
 
 media_folder: 'public/media'
 public_folder: '/media'
