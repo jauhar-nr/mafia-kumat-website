@@ -16,11 +16,11 @@ export function Navbar() {
         WebkitBackdropFilter: 'blur(12px)'
       }}
     >
-      <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Link href="/" style={{ fontWeight: '800', fontSize: '1.25rem', letterSpacing: '-0.05em' }}>
+      <div className="container nav-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <Link href="/" style={{ whiteSpace: 'nowrap', fontWeight: '800', fontSize: '1.25rem', letterSpacing: '-0.05em' }}>
           Mafia <span style={{ color: 'var(--gray-medium)' }}>Kumat</span>
         </Link>
-        <div style={{ display: 'flex', gap: '2rem', alignItems: 'center', fontSize: '0.9rem', fontWeight: '600' }}>
+        <div className="nav-links" style={{ display: 'flex', alignItems: 'center', fontWeight: '600' }}>
           <Link href="/materi" style={{ color: 'var(--gray-medium)' }}>Materi</Link>
           <Link href="/people" style={{ color: 'var(--gray-medium)' }}>Tim Pengajar</Link>
           <Link href="/about" style={{ color: 'var(--gray-medium)' }}>Tentang</Link>
