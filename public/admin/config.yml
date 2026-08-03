@@ -1,0 +1,22 @@
+local_backend: true
+backend:
+  name: github
+  repo: mafia-kumat/mafia-kumat-website
+  branch: main
+
+media_folder: 'public/media'
+public_folder: '/media'
+
+collections:
+  - name: 'chapters'
+    label: 'Materi Belajar'
+    folder: 'src/app/materi/(chapters)'
+    create: true
+    path: '{{slug}}/page'
+    extension: 'mdx'
+    format: 'frontmatter'
+    fields:
+      - { label: 'Judul Bab', name: 'title', widget: 'string' }
+      - { label: 'Nomor Urut', name: 'order', widget: 'number', value_type: 'int' }
+      - { label: 'Deskripsi Singkat', name: 'description', widget: 'text' }
+      - { label: 'Isi Materi', name: 'body', widget: 'markdown', hint: 'Ketik: <PDFViewer url="/media/file.pdf" title="Lampiran" /> untuk memasukkan PDF ke tengah materi.' }

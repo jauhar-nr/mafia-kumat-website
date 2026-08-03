@@ -1,6 +1,5 @@
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "../components/ThemeProvider";
-import Script from "next/script";
 import "./globals.css";
 import "katex/dist/katex.min.css";
 
@@ -29,7 +28,6 @@ export default function RootLayout({ children }) {
         <ThemeProvider attribute="data-theme" defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>
-        <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" strategy="beforeInteractive" />
       </body>
     </html>
   );
