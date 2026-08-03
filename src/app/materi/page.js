@@ -46,7 +46,7 @@ export default function MateriIndex() {
 
   return (
     <>
-      <MiniNavbar backHref="/" backText="Kembali ke Beranda" />
+      <MiniNavbar backHref="/" backText="Kembali" />
       <div className="container" style={{ padding: '4rem 2rem', maxWidth: '800px' }}>
         <h1 className="animate-fade-up" style={{ fontSize: '3rem', marginBottom: '1rem', borderBottom: 'none' }}>Silabus Materi</h1>
         <p className="animate-fade-up delay-1" style={{ fontSize: '1.1rem', marginBottom: '3rem' }}>

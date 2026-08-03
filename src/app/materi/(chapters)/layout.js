@@ -33,7 +33,7 @@ export default function MateriLayout({ children }) {
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <ReadingProgress />
-      <MiniNavbar backHref="/materi" backText="Kembali ke Silabus" />
+      <MiniNavbar backHref="/materi" backText="Kembali" />
       
       <main className="container markdown-body" style={{ padding: '4rem 2rem', maxWidth: '800px', flex: 1 }}>
         {children}

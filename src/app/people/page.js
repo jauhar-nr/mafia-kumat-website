@@ -32,14 +32,14 @@ const teamMembers = [
   {
     name: "Naufal Lutfian Hakim",
     role: "Kontributor Konten",
-    affiliation: "Mafia Kumat",
+    affiliation: "Universitas Airlangga (UNAIR)",
     bio: "Ahli kuantum.",
     image: "/people/people-naufal.jpeg",
   },
   {
     name: "Yovan Fabiano Maitlen",
     role: "Kontributor Konten",
-    affiliation: "Mafia Kumat",
+    affiliation: "SMA Dempo Malang",
     bio: "Ahli kuantum.",
     image: "/people/people-yovan.jpeg",
   },
