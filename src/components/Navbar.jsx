@@ -24,27 +24,31 @@ export function Navbar() {
           Mafia <span style={{ color: 'var(--gray-medium)' }}>Kumat</span>
         </Link>
         
-        {/* Tombol Hamburger (Hanya Muncul di HP) */}
-        <button 
-          className="mobile-menu-btn"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle Menu"
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            {isMenuOpen ? (
-              <path d="M18 6L6 18M6 6l12 12" />
-            ) : (
-              <path d="M3 12h18M3 6h18M3 18h18" />
-            )}
-          </svg>
-        </button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+          {/* Menu Desktop */}
+          <div className="nav-links desktop-menu" style={{ display: 'flex', alignItems: 'center', fontWeight: '600' }}>
+            <Link href="/materi" style={{ color: 'var(--gray-medium)' }}>Materi</Link>
+            <Link href="/people" style={{ color: 'var(--gray-medium)' }}>Tim Pengajar</Link>
+            <Link href="/about" style={{ color: 'var(--gray-medium)' }}>Tentang</Link>
+          </div>
 
-        {/* Menu Desktop */}
-        <div className="nav-links desktop-menu" style={{ display: 'flex', alignItems: 'center', fontWeight: '600' }}>
-          <Link href="/materi" style={{ color: 'var(--gray-medium)' }}>Materi</Link>
-          <Link href="/people" style={{ color: 'var(--gray-medium)' }}>Tim Pengajar</Link>
-          <Link href="/about" style={{ color: 'var(--gray-medium)' }}>Tentang</Link>
+          {/* Tombol Tema (Selalu Muncul) */}
           <ThemeToggle />
+
+          {/* Tombol Hamburger (Hanya Muncul di HP) */}
+          <button 
+            className="mobile-menu-btn"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle Menu"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              {isMenuOpen ? (
+                <path d="M18 6L6 18M6 6l12 12" />
+              ) : (
+                <path d="M3 12h18M3 6h18M3 18h18" />
+              )}
+            </svg>
+          </button>
         </div>
       </div>
 
@@ -70,9 +74,6 @@ export function Navbar() {
           <Link href="/materi" onClick={() => setIsMenuOpen(false)}>Materi</Link>
           <Link href="/people" onClick={() => setIsMenuOpen(false)}>Tim Pengajar</Link>
           <Link href="/about" onClick={() => setIsMenuOpen(false)}>Tentang</Link>
-          <div style={{ marginTop: '0.5rem', transform: 'scale(1.1)' }}>
-            <ThemeToggle />
-          </div>
         </div>
       )}
     </nav>
