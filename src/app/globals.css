@@ -191,39 +191,51 @@ p {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .container {
-    padding: 0 1.25rem;
+    padding: 0 1rem;
   }
   
   .nav-header {
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center !important;
+    flex-wrap: nowrap !important;
+    gap: 0.5rem;
+    justify-content: space-between !important;
+  }
+  
+  .nav-header > a {
+    font-size: 1.1rem !important;
+    flex-shrink: 0;
   }
   
   .nav-links {
-    gap: 1rem;
-    font-size: 0.85rem;
-    width: 100%;
-    justify-content: center;
+    gap: 0.75rem !important;
+    font-size: 0.8rem !important;
+    flex-shrink: 1;
+    overflow-x: auto;
+    /* Menyembunyikan scrollbar tapi tetap bisa digeser (swipe) jika terpaksa */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .nav-links::-webkit-scrollbar {
+    display: none;
   }
   
   h1 {
-    font-size: 2.5rem !important;
+    font-size: 2.2rem !important;
   }
 }
 
 /* Ultra Mobile Responsiveness */
 @media (max-width: 480px) {
   .container {
-    padding: 0 1rem;
+    padding: 0 0.8rem;
   }
   
   .nav-header > a {
-    flex-shrink: 0; /* Mencegah judul 'Mafia Kumat' tertekan */
+    font-size: 1rem !important;
   }
   
   .nav-links {
-    gap: 0.6rem !important; /* Jarak dibuat sangat rapat */
-    font-size: 0.75rem !important; /* Huruf sedikit dikecilkan */
+    gap: 0.5rem !important;
+    font-size: 0.7rem !important;
   }
 }
