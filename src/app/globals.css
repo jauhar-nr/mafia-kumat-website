@@ -188,54 +188,47 @@ p {
   font-size: 0.9rem;
 }
 
+/* Navbar Hamburger Button */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--foreground);
+}
+
+/* Mobile Dropdown Animation */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-down {
+  animation: fadeDown 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .container {
-    padding: 0 1rem;
+    padding: 0 1.25rem;
   }
   
-  .nav-header {
-    flex-wrap: nowrap !important;
-    gap: 0.5rem;
-    justify-content: space-between !important;
+  .desktop-menu {
+    display: none !important;
   }
   
-  .nav-header > a {
-    font-size: 1.1rem !important;
-    flex-shrink: 0;
-  }
-  
-  .nav-links {
-    gap: 0.75rem !important;
-    font-size: 0.8rem !important;
-    flex-shrink: 1;
-    overflow-x: auto;
-    /* Menyembunyikan scrollbar tapi tetap bisa digeser (swipe) jika terpaksa */
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  
-  .nav-links::-webkit-scrollbar {
-    display: none;
+  .mobile-menu-btn {
+    display: flex !important;
   }
   
   h1 {
-    font-size: 2.2rem !important;
+    font-size: 2.5rem !important;
   }
 }
 
 /* Ultra Mobile Responsiveness */
 @media (max-width: 480px) {
   .container {
-    padding: 0 0.8rem;
-  }
-  
-  .nav-header > a {
-    font-size: 1rem !important;
-  }
-  
-  .nav-links {
-    gap: 0.5rem !important;
-    font-size: 0.7rem !important;
+    padding: 0 1rem;
   }
 }
