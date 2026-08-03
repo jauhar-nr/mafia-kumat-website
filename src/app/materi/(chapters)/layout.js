@@ -2,9 +2,16 @@ import Link from 'next/link';
 import { MiniNavbar } from '../../../components/MiniNavbar';
 import { ChapterNavigation } from '../../../components/ChapterNavigation';
 import { ReadingProgress } from '../../../components/ReadingProgress';
+import { PDFViewer } from '../../../components/PDFViewer';
+import { GDrivePDF } from '../../../components/GDrivePDF';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+
+const components = {
+  PDFViewer,
+  GDrivePDF,
+};
 
 // Fungsi untuk membaca daftar bab dari CMS secara statis
 function getChapters() {

@@ -19,4 +19,4 @@ collections:
       - { label: 'Judul Bab', name: 'title', widget: 'string' }
       - { label: 'Nomor Urut', name: 'order', widget: 'number', value_type: 'int' }
       - { label: 'Deskripsi Singkat', name: 'description', widget: 'text' }
-      - { label: 'Isi Materi', name: 'body', widget: 'markdown', hint: 'Ketik: <PDFViewer url="/media/file.pdf" title="Lampiran" /> untuk memasukkan PDF ke tengah materi.' }
+      - { label: 'Isi Materi', name: 'body', widget: 'markdown', hint: 'Ketik: <GDrivePDF id="ID_DRIVE" title="Judul" /> untuk menyisipkan PDF dari Google Drive.' }
