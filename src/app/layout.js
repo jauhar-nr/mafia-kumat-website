@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="id" className={inter.variable} suppressHydrationWarning>
       <body suppressHydrationWarning>
-        <ThemeProvider attribute="data-theme" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="data-theme" defaultTheme="system" enableSystem themes={["light", "dark", "red"]}>
           {children}
         </ThemeProvider>
       </body>

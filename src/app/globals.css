@@ -22,6 +22,16 @@
   --accent: #ffffff;
 }
 
+[data-theme='red'] {
+  --background: #1a0505;
+  --foreground: #ffeeee;
+  --gray-light: #2d0a0a;
+  --gray-medium: #d48b8b;
+  --gray-dark: #4a1515;
+  --border: #4a1515;
+  --accent: #ff4d4d;
+}
+
 html,
 body {
   max-width: 100vw;
