@@ -38,9 +38,9 @@ export default function AboutPage() {
           }}
         >
           <p style={{ marginBottom: "1.5rem" }}>
-            <strong>Mafia Kumat</strong> (Matematika & Fisika Kuantum Material)
-            lahir dari sebuah kegelisahan: mengapa materi fisika tingkat lanjut
-            selalu terasa kaku, membosankan, dan sulit diakses secara visual?
+            <strong>Mafia Kumat</strong> (Maniak Fisika Kuantum Material) lahir
+            dari sebuah kegelisahan: mengapa materi fisika tingkat lanjut selalu
+            terasa kaku, membosankan, dan sulit diakses secara visual?
           </p>
           <p style={{ marginBottom: "1.5rem" }}>
             Buku cetak fisika kuantum seringkali tebal dan penuh dengan
