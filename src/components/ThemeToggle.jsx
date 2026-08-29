@@ -16,7 +16,7 @@ export function ThemeToggle() {
     return <div style={{ width: 24, height: 24 }} />;
   }
 
-  const nextTheme = theme === "light" ? "dark" : theme === "dark" ? "red" : "light";
+  const nextTheme = theme === "light" ? "dark" : "light";
 
   return (
     <button
@@ -35,20 +35,15 @@ export function ThemeToggle() {
         transition: "var(--transition)",
       }}
       aria-label="Toggle Theme"
-      title="Toggle Theme"
+      title={theme === "light" ? "Mode Gelap" : "Mode Terang"}
     >
       {theme === "light" ? (
         // Moon icon for light mode (click to dark)
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
-      ) : theme === "dark" ? (
-        // Flame icon for dark mode (click to red)
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
-        </svg>
       ) : (
-        // Sun icon for red mode (click to light)
+        // Sun icon for dark mode (click to light)
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="5"></circle>
           <line x1="12" y1="1" x2="12" y2="3"></line>

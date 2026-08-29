@@ -1,45 +1,10 @@
 import Link from 'next/link';
 import { MiniNavbar } from '../../components/MiniNavbar';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
+import { getChapters } from '../../lib/chapters';
 
 export const metadata = {
   title: 'Materi | Mafia Kumat',
 };
-
-// Fungsi ini berjalan di Server (tidak membebani browser pengguna)
-function getChapters() {
-  const chaptersDir = path.join(process.cwd(), 'src/app/materi/(chapters)');
-  
-  if (!fs.existsSync(chaptersDir)) {
-    return [];
-  }
-
-  const entries = fs.readdirSync(chaptersDir, { withFileTypes: true });
-
-  const chapters = entries
-    .filter(entry => entry.isDirectory()) // Hanya membaca folder
-    .map(entry => {
-      const slug = entry.name;
-      const filePath = path.join(chaptersDir, slug, 'page.mdx');
-      
-      if (fs.existsSync(filePath)) {
-        const fileContent = fs.readFileSync(filePath, 'utf8');
-        const { data } = matter(fileContent); // Mengambil frontmatter
-        return {
-          slug,
-          title: data.title || slug,
-          description: data.description || 'Tidak ada deskripsi',
-        };
-      }
-      return null;
-    })
-    .filter(Boolean); // Membuang yang null
-  
-  // Mengurutkan berdasarkan nama folder (slug) agar urut (01, 02, dst)
-  return chapters.sort((a, b) => a.slug.localeCompare(b.slug));
-}
 
 export default function MateriIndex() {
   const chapters = getChapters();

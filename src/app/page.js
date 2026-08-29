@@ -1,29 +1,7 @@
 import Link from "next/link";
 import { ThemeToggle } from "../components/ThemeToggle";
 import { Navbar } from "../components/Navbar";
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-
-function getChapters() {
-  const chaptersDir = path.join(process.cwd(), 'src/app/materi/(chapters)');
-  if (!fs.existsSync(chaptersDir)) return [];
-  const entries = fs.readdirSync(chaptersDir, { withFileTypes: true });
-  const chapters = entries
-    .filter(entry => entry.isDirectory())
-    .map(entry => {
-      const slug = entry.name;
-      const filePath = path.join(chaptersDir, slug, 'page.mdx');
-      if (fs.existsSync(filePath)) {
-        const fileContent = fs.readFileSync(filePath, 'utf8');
-        const { data } = matter(fileContent);
-        return { slug, title: data.title || slug, description: data.description || '' };
-      }
-      return null;
-    })
-    .filter(Boolean);
-  return chapters.sort((a, b) => a.slug.localeCompare(b.slug));
-}
+import { getChapters } from "../lib/chapters";
 
 export default function Home() {
   const chapters = getChapters().slice(0, 3);
@@ -72,7 +50,7 @@ export default function Home() {
               className="animate-fade-up delay-2"
               style={{ display: "flex", gap: "1rem", marginTop: "3rem" }}
             >
-              <Link href="/materi" className="btn btn-primary">
+              <Link href={chapters.length > 0 ? `/materi/${chapters[0].slug}` : '/materi'} className="btn btn-primary">
                 Mulai Belajar
               </Link>
               <Link href="/materi" className="btn btn-secondary">
