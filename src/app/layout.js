@@ -1,10 +1,15 @@
-import { Inter } from "next/font/google";
+import { Inter, Source_Serif_4 } from "next/font/google";
 import { ThemeProvider } from "../components/ThemeProvider";
 import "./globals.css";
 import "katex/dist/katex.min.css";
 
 const inter = Inter({
   variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const sourceSerif = Source_Serif_4({
+  variable: "--font-serif",
   subsets: ["latin"],
 });
 
@@ -23,7 +28,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="id" className={inter.variable} suppressHydrationWarning>
+    <html lang="id" className={`${inter.variable} ${sourceSerif.variable}`} suppressHydrationWarning>
       <body suppressHydrationWarning>
         <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem={false} themes={["light", "dark"]}>
           {children}

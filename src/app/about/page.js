@@ -1,4 +1,5 @@
 import { Navbar } from "../../components/Navbar";
+import { Footer } from "../../components/Footer";
 import Link from "next/link";
 
 export const metadata = {
@@ -54,89 +55,6 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/*
-        <h2
-          className="animate-fade-up delay-2"
-          style={{
-            fontSize: "2rem",
-            marginBottom: "1.5rem",
-            textAlign: "center",
-          }}
-        >
-          3 Pilar Utama
-        </h2>
-
-        <div
-          className="animate-fade-up delay-3"
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "1.5rem",
-            marginBottom: "4rem",
-          }}
-        >
-          <div className="glass-card" style={{ padding: "2rem" }}>
-            <h3
-              style={{
-                fontSize: "1.25rem",
-                marginBottom: "0.5rem",
-                display: "flex",
-                alignItems: "center",
-                gap: "0.5rem",
-              }}
-            >
-              <span style={{ fontSize: "1.5rem" }}>📏</span> Akurasi Matematis
-              Terjaga
-            </h3>
-            <p style={{ margin: 0, fontSize: "0.95rem" }}>
-              Berbeda dengan situs pop-sains, kami tidak membuang rumus
-              matematika. Lewat mesin LaTeX dan render yang tajam, kami membuat
-              persamaan Schrödinger senyaman dibaca layaknya puisi.
-            </p>
-          </div>
-
-          <div className="glass-card" style={{ padding: "2rem" }}>
-            <h3
-              style={{
-                fontSize: "1.25rem",
-                marginBottom: "0.5rem",
-                display: "flex",
-                alignItems: "center",
-                gap: "0.5rem",
-              }}
-            >
-              <span style={{ fontSize: "1.5rem" }}>🎨</span> Pengalaman Visual
-              Premium
-            </h3>
-            <p style={{ margin: 0, fontSize: "0.95rem" }}>
-              Desain monokromatik, interaksi halus, dan tata letak membaca
-              layaknya medium.com. Kami memastikan matamu tidak cepat lelah saat
-              mempelajari matriks hermit.
-            </p>
-          </div>
-
-          <div className="glass-card" style={{ padding: "2rem" }}>
-            <h3
-              style={{
-                fontSize: "1.25rem",
-                marginBottom: "0.5rem",
-                display: "flex",
-                alignItems: "center",
-                gap: "0.5rem",
-              }}
-            >
-              <span style={{ fontSize: "1.5rem" }}>🌐</span> Akses Terbuka (Open
-              Web)
-            </h3>
-            <p style={{ margin: 0, fontSize: "0.95rem" }}>
-              Tidak perlu mengunduh PDF yang memakan memori, tidak perlu
-              instalasi. Setiap materi, simulasi, dan video pembelajaran
-              langsung terbuka di layar gawai milikmu.
-            </p>
-          </div>
-        </div>
-        */}
-
         <div
           className="animate-fade-up delay-3"
           style={{
@@ -158,21 +76,7 @@ export default function AboutPage() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer
-        style={{
-          padding: "3rem 0",
-          borderTop: "1px solid var(--border)",
-          textAlign: "center",
-          marginTop: "auto",
-        }}
-      >
-        <div className="container">
-          <p style={{ margin: 0, fontSize: "0.9rem" }}>
-            &copy; {new Date().getFullYear()} Tim Mafia Kumat.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

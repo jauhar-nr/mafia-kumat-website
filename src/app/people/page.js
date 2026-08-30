@@ -1,4 +1,5 @@
 import { Navbar } from "../../components/Navbar";
+import { Footer } from "../../components/Footer";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -162,21 +163,7 @@ export default function PeoplePage() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer
-        style={{
-          padding: "3rem 0",
-          borderTop: "1px solid var(--border)",
-          textAlign: "center",
-          marginTop: "auto",
-        }}
-      >
-        <div className="container">
-          <p style={{ margin: 0, fontSize: "0.9rem" }}>
-            &copy; {new Date().getFullYear()} Tim Mafia Kumat.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
