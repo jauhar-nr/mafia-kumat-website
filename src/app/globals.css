@@ -166,6 +166,7 @@ p {
 .markdown-body h5,
 .markdown-body h6 {
   font-family: var(--font-inter), 'Inter', sans-serif;
+  text-wrap: balance;
 }
 
 .markdown-body h1 {
@@ -200,6 +201,8 @@ p {
   background: color-mix(in srgb, var(--foreground) 2%, transparent);
   border-radius: 12px;
   border: 1px solid var(--border);
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 150px;
 }
 
 /* Navbar Utilities */
@@ -297,26 +300,52 @@ p {
   display: none;
 }
 
+.materi-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+}
+
+.toc-sidebar {
+  display: none;
+}
+
 @media (min-width: 1280px) {
-  .toc-desktop {
-    display: block;
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    left: max(1.5rem, calc((100vw - 800px) / 2 - 280px));
-    width: 220px;
-    max-height: 60vh;
-    overflow-y: auto;
-    z-index: 50;
+  .materi-grid-layout {
+    grid-template-columns: 1fr minmax(0, 800px) 1fr;
+    gap: 0;
+  }
+  
+  .materi-grid-layout > .markdown-body {
+    grid-column: 2;
   }
 
-  .toc-desktop::-webkit-scrollbar {
+  .toc-sidebar {
+    grid-column: 1;
+    display: block;
+    position: sticky;
+    top: 6rem;
+    height: max-content;
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+    justify-self: end;
+    width: 100%;
+    max-width: 280px;
+    padding-right: 3rem;
+  }
+
+  .toc-sidebar::-webkit-scrollbar {
     width: 2px;
   }
 
-  .toc-desktop::-webkit-scrollbar-thumb {
+  .toc-sidebar::-webkit-scrollbar-thumb {
     background: var(--border);
     border-radius: 2px;
+  }
+
+  .toc-desktop {
+    display: block;
   }
 }
 

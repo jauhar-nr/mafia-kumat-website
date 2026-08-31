@@ -12,9 +12,8 @@ export function TableOfContents() {
 
     const elements = article.querySelectorAll('h1, h2, h3');
     const items = Array.from(elements).map((el, idx) => {
-      if (!el.id) {
-        el.id = `heading-${idx}`;
-      }
+      // With rehype-slug, IDs are automatically generated on the server.
+      // We don't mutate the DOM here to avoid React hydration mismatches.
       return {
         id: el.id,
         text: el.textContent,

@@ -15,12 +15,17 @@ export default function MateriLayout({ children }) {
       <ReadingProgress />
       <MiniNavbar backHref="/materi" backText="Kembali" />
       
-      <main className="container markdown-body" style={{ padding: '4rem 2rem', maxWidth: '800px', flex: 1 }}>
-        <Breadcrumbs chapters={chapters} />
-        <TableOfContents />
-        {children}
-        <ChapterNavigation chapters={chapters} />
-      </main>
+      <div className="materi-grid-layout" style={{ flex: 1, padding: '4rem 2rem' }}>
+        <aside className="toc-sidebar">
+          <TableOfContents />
+        </aside>
+        
+        <main className="markdown-body" style={{ minWidth: 0 }}>
+          <Breadcrumbs chapters={chapters} />
+          {children}
+          <ChapterNavigation chapters={chapters} />
+        </main>
+      </div>
 
       <ScrollToTop />
       <Footer />

@@ -3,27 +3,33 @@ import { useEffect, useState } from 'react';
 
 export function ReadingProgress() {
   const [progress, setProgress] = useState(0);
+  const [useJs, setUseJs] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight;
-      const winHeight = window.innerHeight;
+    // Feature detect CSS scroll timeline
+    if (!CSS.supports('animation-timeline', 'scroll()')) {
+      setUseJs(true);
       
-      const maxScroll = docHeight - winHeight;
-      if (maxScroll <= 0) {
-        setProgress(0);
-        return;
-      }
-      
-      const currentProgress = (scrollY / maxScroll) * 100;
-      setProgress(currentProgress);
-    };
+      const handleScroll = () => {
+        const scrollY = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight;
+        const winHeight = window.innerHeight;
+        
+        const maxScroll = docHeight - winHeight;
+        if (maxScroll <= 0) {
+          setProgress(0);
+          return;
+        }
+        
+        const currentProgress = (scrollY / maxScroll) * 100;
+        setProgress(currentProgress);
+      };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Panggil sekali saat dimuat
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      handleScroll();
 
-    return () => window.removeEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
   }, []);
 
   return (
@@ -34,13 +40,12 @@ export function ReadingProgress() {
       width: '100%',
       height: '4px',
       backgroundColor: 'transparent',
-      zIndex: 9999, // Memastikan bar ini ada di lapisan paling atas
+      zIndex: 9999,
     }}>
-      <div style={{
+      <div className={useJs ? "" : "reading-progress-bar"} style={{
         height: '100%',
-        width: `${progress}%`,
-        backgroundColor: 'var(--foreground)', // Menggunakan warna paling kontras dengan tema saat ini
-        transition: 'width 0.1s ease-out',
+        backgroundColor: 'var(--foreground)',
+        ...(useJs ? { width: `${progress}%`, transition: 'width 0.1s ease-out' } : {})
       }} />
     </div>
   );

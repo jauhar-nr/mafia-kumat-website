@@ -1,10 +1,22 @@
 'use client';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { ThemeToggle } from './ThemeToggle';
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const getLinkStyle = (path) => {
+    const isActive = pathname.startsWith(path);
+    return {
+      color: isActive ? 'var(--foreground)' : 'var(--gray-medium)',
+      borderBottom: isActive ? '2px solid var(--foreground)' : '2px solid transparent',
+      paddingBottom: '0.25rem',
+      transition: 'all 0.2s ease',
+    };
+  };
 
   return (
     <nav 
@@ -27,9 +39,9 @@ export function Navbar() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
           {/* Menu Desktop */}
           <div className="nav-links desktop-menu" style={{ display: 'flex', alignItems: 'center', fontWeight: '600' }}>
-            <Link href="/materi" style={{ color: 'var(--gray-medium)' }}>Materi</Link>
-            <Link href="/people" style={{ color: 'var(--gray-medium)' }}>Tim Pengajar</Link>
-            <Link href="/about" style={{ color: 'var(--gray-medium)' }}>Tentang</Link>
+            <Link href="/materi" style={getLinkStyle('/materi')}>Materi</Link>
+            <Link href="/people" style={getLinkStyle('/people')}>Tim Pengajar</Link>
+            <Link href="/about" style={getLinkStyle('/about')}>Tentang</Link>
           </div>
 
           {/* Tombol Tema (Selalu Muncul) */}
@@ -71,9 +83,9 @@ export function Navbar() {
           fontSize: '1.1rem',
           boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)'
         }}>
-          <Link href="/materi" onClick={() => setIsMenuOpen(false)}>Materi</Link>
-          <Link href="/people" onClick={() => setIsMenuOpen(false)}>Tim Pengajar</Link>
-          <Link href="/about" onClick={() => setIsMenuOpen(false)}>Tentang</Link>
+          <Link href="/materi" onClick={() => setIsMenuOpen(false)} style={{ color: pathname.startsWith('/materi') ? 'var(--foreground)' : 'var(--gray-medium)' }}>Materi</Link>
+          <Link href="/people" onClick={() => setIsMenuOpen(false)} style={{ color: pathname.startsWith('/people') ? 'var(--foreground)' : 'var(--gray-medium)' }}>Tim Pengajar</Link>
+          <Link href="/about" onClick={() => setIsMenuOpen(false)} style={{ color: pathname.startsWith('/about') ? 'var(--foreground)' : 'var(--gray-medium)' }}>Tentang</Link>
         </div>
       )}
     </nav>
