@@ -119,13 +119,13 @@ export default function Home() {
                 marginBottom: "0.5rem",
               }}
             >
-              Jalur Belajar
+              Lintasan Belajar
             </div>
             <h2
               className="animate-fade-up"
               style={{ fontSize: "2.4rem", margin: 0, fontWeight: "800" }}
             >
-              Kurikulum Fisika Kuantum Material
+              Lintasan Fisika Kuantum Material
             </h2>
             <p
               style={{
@@ -136,7 +136,7 @@ export default function Home() {
                 lineHeight: "1.6",
               }}
             >
-              Materi disusun dalam 4 topik utama yang saling berkesinambungan,
+              Materi disusun dalam 4 lintasan utama yang saling berkesinambungan,
               mulai dari fondasi matematika analitis hingga fenomena kuantum pada material padat.
             </p>
           </div>
@@ -197,7 +197,7 @@ export default function Home() {
                       }}
                     >
                       {track.chapters.length > 0
-                        ? `${track.chapters.length} Modul Tersedia`
+                        ? `${track.chapters.length} Topik Tersedia`
                         : "Segera Hadir"}
                     </span>
                   </div>
@@ -244,11 +244,11 @@ export default function Home() {
                         color: "var(--foreground)",
                       }}
                     >
-                      Eksplorasi Modul &rarr;
+                      Jelajahi Topik &rarr;
                     </Link>
                   ) : (
                     <span style={{ fontSize: "0.88rem", color: "var(--gray-medium)" }}>
-                      Modul sedang disusun
+                      Topik sedang disusun
                     </span>
                   )}
                 </div>

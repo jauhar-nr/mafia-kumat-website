@@ -38,7 +38,7 @@ export function ChapterSidebar({ chapters = [], isMobile = false, onClose }) {
       )}
 
       <div className="chapter-sidebar-header">
-        <span className="chapter-sidebar-title">Kurikulum</span>
+        <span className="chapter-sidebar-title">Lintasan Belajar</span>
         <Link href="/materi" className="chapter-sidebar-all-link" onClick={isMobile ? onClose : undefined}>
           Semua Materi &rarr;
         </Link>

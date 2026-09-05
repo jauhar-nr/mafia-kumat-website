@@ -73,7 +73,7 @@ export default function MateriList({ chapters = [], tracks = [] }) {
             transition: 'all 0.15s ease',
           }}
         >
-          Semua Topik ({chapters.length})
+          Semua Lintasan ({chapters.length})
         </button>
 
         {tracks.map((track) => {
@@ -154,7 +154,7 @@ export default function MateriList({ chapters = [], tracks = [] }) {
                       fontWeight: '600',
                     }}
                   >
-                    {trackChapters.length} Modul
+                    {trackChapters.length} Topik
                   </span>
                 </div>
 
@@ -168,7 +168,7 @@ export default function MateriList({ chapters = [], tracks = [] }) {
                       fontSize: '0.9rem',
                     }}
                   >
-                    Modul untuk topik ini sedang disiapkan oleh tim.
+                    Topik untuk lintasan ini sedang disiapkan oleh tim.
                   </div>
                 ) : (
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -233,7 +233,7 @@ function ChapterCard({ chapter }) {
               gap: '0.25rem',
             }}
           >
-            Buka Modul &rarr;
+            Buka Topik &rarr;
           </span>
         </div>
 

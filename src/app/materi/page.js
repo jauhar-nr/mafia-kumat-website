@@ -5,7 +5,7 @@ import MateriList from './MateriList';
 
 export const metadata = {
   title: 'Silabus Materi | Mafia Kumat',
-  description: 'Daftar modul pembelajaran komprehensif dari komunitas Mafia Kumat terstruktur dalam 4 jalur belajar.',
+  description: 'Daftar topik pembelajaran komprehensif dari komunitas Mafia Kumat terstruktur dalam 4 lintasan belajar.',
 };
 
 export default function MateriIndex() {
@@ -26,10 +26,10 @@ export default function MateriIndex() {
           className="animate-fade-up delay-1"
           style={{ fontSize: '1.05rem', color: 'var(--gray-medium)', marginBottom: '2.5rem', lineHeight: '1.6' }}
         >
-          Eksplorasi modul pembelajaran berdasarkan 4 topik utama Mafia Kumat, mulai dari fondasi matematika analitis hingga aplikasi kuantum material.
+          Eksplorasi topik pembelajaran berdasarkan 4 lintasan utama Mafia Kumat, mulai dari fondasi matematika analitis hingga aplikasi kuantum material.
         </p>
 
-        <Suspense fallback={<div style={{ padding: '2rem 0', color: 'var(--gray-medium)' }}>Memuat kurikulum...</div>}>
+        <Suspense fallback={<div style={{ padding: '2rem 0', color: 'var(--gray-medium)' }}>Memuat lintasan belajar...</div>}>
           <MateriList chapters={chapters} tracks={tracks} />
         </Suspense>
       </div>

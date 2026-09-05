@@ -20,7 +20,7 @@ collections:
         name: "title"
         widget: "string"
 
-      - label: "Topik Utama (Jalur Belajar)"
+      - label: "Lintasan Belajar"
         name: "track"
         widget: "select"
         options:
@@ -30,7 +30,7 @@ collections:
           - "Kuantum Material"
         default: "Fisika & Mekanika Kuantum"
 
-      - label: "Nomor Urut dalam Topik"
+      - label: "Nomor Urut dalam Lintasan"
         name: "order"
         widget: "number"
         value_type: "int"

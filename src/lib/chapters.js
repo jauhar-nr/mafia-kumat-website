@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 
 /**
- * 4 Topik Utama (Jalur Belajar) Mafia Kumat
+ * 4 Lintasan Belajar Mafia Kumat
  */
 export const TRACKS = [
   {
@@ -37,8 +37,8 @@ export const TRACKS = [
 ];
 
 /**
- * Membaca seluruh modul materi dari direktori (chapters) secara statis di server.
- * Mengembalikan array modul materi yang terurut rapi berdasarkan Jalur Belajar dan Nomor Urut.
+ * Membaca seluruh topik materi dari direktori (chapters) secara statis di server.
+ * Mengembalikan array topik materi yang terurut rapi berdasarkan Lintasan Belajar dan Nomor Urut.
  */
 export function getChapters() {
   const chaptersDir = path.join(process.cwd(), 'src/app/materi/(chapters)');
@@ -81,7 +81,7 @@ export function getChapters() {
 }
 
 /**
- * Mengelompokkan materi ke dalam masing-masing Jalur Belajar (Track).
+ * Mengelompokkan topik materi ke dalam masing-masing Lintasan Belajar (Track).
  */
 export function getTracksWithChapters() {
   const allChapters = getChapters();
