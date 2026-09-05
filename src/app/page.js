@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
+import { GrapheneLatticeAnimation } from "../components/GrapheneLatticeAnimation";
 import { getTracksWithChapters, getChapters } from "../lib/chapters";
 
 function TrackIcon({ type }) {
@@ -58,9 +59,14 @@ export default function Home() {
           display: "flex",
           alignItems: "center",
           padding: "6rem 0",
+          position: "relative",
+          overflow: "hidden",
         }}
       >
-        <div className="container">
+        {/* Ambient 3D Tilted Graphene Lattice */}
+        <GrapheneLatticeAnimation />
+
+        <div className="container" style={{ position: "relative", zIndex: 1 }}>
           <div style={{ maxWidth: "800px" }}>
             <h1
               className="animate-fade-up"
