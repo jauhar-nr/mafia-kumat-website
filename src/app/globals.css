@@ -422,6 +422,20 @@ p {
   font-weight: 600;
 }
 
+/* ===== 2x2 Learning Tracks Grid ===== */
+.tracks-grid-2x2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .tracks-grid-2x2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
 /* ===== Materi 3-Column Grid Layout ===== */
 .materi-grid-container {
   max-width: 1440px;

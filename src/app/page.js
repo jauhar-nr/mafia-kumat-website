@@ -141,13 +141,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: "2rem",
-            }}
-          >
+          <div className="tracks-grid-2x2">
             {tracks.map((track, idx) => (
               <div
                 key={track.id}
