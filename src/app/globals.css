@@ -1,23 +1,23 @@
 :root {
-  --background: #ffffff;
-  --foreground: #111111;
-  --gray-light: #f5f5f5;
-  --gray-medium: #888888;
-  --gray-dark: #333333;
-  --border: #e0e0e0;
-  --accent: #000000;
+  --background: #fcfcfd;
+  --foreground: #22252a;
+  --gray-light: #f3f5f8;
+  --gray-medium: #64748b;
+  --gray-dark: #334155;
+  --border: #e2e5ea;
+  --accent: #0f172a;
   
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 [data-theme='dark'] {
-  --background: #09090b;
-  --foreground: #f4f4f5;
-  --gray-light: #18181b;
-  --gray-medium: #a1a1aa;
-  --gray-dark: #27272a;
-  --border: #27272a;
-  --accent: #ffffff;
+  --background: #0f1115;
+  --foreground: #e4e7ec;
+  --gray-light: #161922;
+  --gray-medium: #94a3b8;
+  --gray-dark: #1e2430;
+  --border: #222733;
+  --accent: #f8fafc;
 }
 
 [data-theme='red'] {
@@ -28,6 +28,10 @@
   --gray-dark: #4a1515;
   --border: #4a1515;
   --accent: #ff4d4d;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
@@ -63,6 +67,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.04em;
   line-height: 1.1;
   margin-bottom: 1rem;
+  scroll-margin-top: 5.5rem;
 }
 
 p {
@@ -151,59 +156,181 @@ p {
   box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.15);
 }
 
-/* Markdown Reading Mode */
+/* Markdown Reading Mode — Unified Modern STEM Sans-Serif */
 .markdown-body {
-  font-family: var(--font-serif), 'Georgia', serif;
-  font-size: 1.15rem;
-  line-height: 1.8;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.965rem;
+  line-height: 1.68;
+  letter-spacing: -0.006em;
+  color: var(--foreground);
 }
 
-/* Keep headings in sans-serif for contrast */
+/* Headings with clear, calibrated hierarchy */
 .markdown-body h1,
 .markdown-body h2,
 .markdown-body h3,
 .markdown-body h4,
 .markdown-body h5,
 .markdown-body h6 {
-  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   text-wrap: balance;
+  color: var(--foreground);
+  scroll-margin-top: 5.5rem;
 }
 
 .markdown-body h1 {
-  font-size: 2.5rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
+  font-size: 1.85rem;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  margin-top: 1.75rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--border);
 }
 
 .markdown-body h2 {
-  font-size: 1.8rem;
-  margin-top: 3rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.45rem;
+  font-weight: 750;
+  letter-spacing: -0.025em;
+  margin-top: 2.1rem;
+  margin-bottom: 0.85rem;
+}
+
+.markdown-body h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.markdown-body h4 {
+  font-size: 1.12rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin-top: 1.6rem;
+  margin-bottom: 0.65rem;
+  color: var(--foreground);
+}
+
+.markdown-body h5 {
+  font-size: 1.02rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  margin-top: 1.35rem;
+  margin-bottom: 0.5rem;
+  color: var(--foreground);
+}
+
+/* Semi-bold text calibration — eliminates heavy black blotches */
+.markdown-body strong,
+.markdown-body b {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.markdown-body blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  border-left: 3.5px solid var(--accent);
+  background: color-mix(in srgb, var(--foreground) 3.5%, transparent);
+  border-radius: 0 10px 10px 0;
+  border-top: 1px solid color-mix(in srgb, var(--border) 45%, transparent);
+  border-right: 1px solid color-mix(in srgb, var(--border) 45%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 45%, transparent);
+}
+
+.markdown-body blockquote p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin-bottom: 0.35rem;
+}
+
+.markdown-body blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body ul, 
+.markdown-body ol {
+  font-size: 0.965rem;
+  margin-bottom: 1.25rem;
+  padding-left: 1.35rem;
+}
+
+.markdown-body li {
+  margin-bottom: 0.45rem;
+  line-height: 1.68;
+}
+
+.markdown-body li > ul,
+.markdown-body li > ol {
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+  padding-left: 1.2rem;
 }
 
 .markdown-body p {
   color: var(--foreground);
-  margin-bottom: 1.8rem;
+  font-size: 0.965rem;
+  line-height: 1.68;
+  margin-bottom: 1.2rem;
 }
 
 .markdown-body hr {
   border: 0;
   border-bottom: 1px solid var(--border);
-  margin: 3rem 0;
+  margin: 2.5rem 0;
 }
 
 .markdown-body .katex-display {
-  margin: 2.5rem 0;
+  position: relative;
+  margin: 1.6rem 0;
   overflow-x: auto;
-  padding: 1rem;
-  background: color-mix(in srgb, var(--foreground) 2%, transparent);
-  border-radius: 12px;
+  padding: 1.5rem 1rem 1rem 1rem;
+  background: color-mix(in srgb, var(--foreground) 2.5%, transparent);
+  border-radius: 10px;
   border: 1px solid var(--border);
   content-visibility: auto;
-  contain-intrinsic-size: 1px 150px;
+  contain-intrinsic-size: 1px 120px;
 }
+
+/* Tombol Salin LaTeX */
+.copy-latex-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.28rem 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: var(--font-inter), sans-serif;
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--background) 90%, var(--foreground));
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: all 0.15s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  user-select: none;
+}
+
+.copy-latex-btn:hover {
+  color: var(--foreground);
+  border-color: var(--accent);
+  background: var(--background);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.copy-latex-btn.copied {
+  color: #10b981 !important;
+  border-color: #10b981 !important;
+  background: color-mix(in srgb, #10b981 12%, var(--background)) !important;
+}
+
 
 /* Navbar Utilities */
 .nav-links {
@@ -295,67 +422,275 @@ p {
   font-weight: 600;
 }
 
-/* ===== Table of Contents — Desktop Sidebar ===== */
-.toc-desktop {
-  display: none;
+/* ===== Materi 3-Column Grid Layout ===== */
+.materi-grid-container {
+  max-width: 1440px;
+  padding: 3rem 1.5rem;
 }
 
 .materi-grid-layout {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 2.5rem;
   width: 100%;
 }
 
-.toc-sidebar {
+.chapter-sidebar-desktop-col {
   display: none;
 }
 
+.toc-sidebar-desktop-col {
+  display: none;
+}
+
+/* Tablet (>= 960px and < 1280px): 2 Kolom (Sidebar Kiri + Konten) */
+@media (min-width: 960px) and (max-width: 1279px) {
+  .materi-grid-layout {
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .chapter-sidebar-desktop-col {
+    display: block;
+    grid-column: 1;
+  }
+
+  .materi-grid-layout > .markdown-body {
+    grid-column: 2;
+  }
+}
+
+/* Desktop (>= 1280px): 3 Kolom Penuh (Sidebar Kiri + Konten Tengah + TOC Kanan) */
 @media (min-width: 1280px) {
   .materi-grid-layout {
-    grid-template-columns: 1fr minmax(0, 800px) 1fr;
-    gap: 0;
+    grid-template-columns: 250px minmax(0, 780px) 230px;
+    gap: 2.5rem;
+    justify-content: center;
   }
-  
+
+  .chapter-sidebar-desktop-col {
+    display: block;
+    grid-column: 1;
+  }
+
   .materi-grid-layout > .markdown-body {
     grid-column: 2;
   }
 
-  .toc-sidebar {
-    grid-column: 1;
+  .toc-sidebar-desktop-col {
     display: block;
-    position: sticky;
-    top: 6rem;
-    height: max-content;
-    max-height: calc(100vh - 8rem);
-    overflow-y: auto;
-    justify-self: end;
-    width: 100%;
-    max-width: 280px;
-    padding-right: 3rem;
-  }
-
-  .toc-sidebar::-webkit-scrollbar {
-    width: 2px;
-  }
-
-  .toc-sidebar::-webkit-scrollbar-thumb {
-    background: var(--border);
-    border-radius: 2px;
-  }
-
-  .toc-desktop {
-    display: block;
+    grid-column: 3;
   }
 }
 
-.toc-title {
-  font-size: 0.75rem;
+/* Sticky Container untuk kedua Sidebar */
+.sticky-sidebar-inner {
+  position: sticky;
+  top: 5.5rem;
+  max-height: calc(100vh - 7rem);
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  scrollbar-width: thin;
+}
+
+.sticky-sidebar-inner::-webkit-scrollbar {
+  width: 3px;
+}
+
+.sticky-sidebar-inner::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+/* ===== Chapter Sidebar Styles ===== */
+.chapter-sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.chapter-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.chapter-sidebar-title {
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
+  color: var(--gray-medium);
+}
+
+.chapter-sidebar-all-link {
+  font-size: 0.75rem;
+  color: var(--gray-medium);
+  font-weight: 500;
+}
+
+.chapter-sidebar-all-link:hover {
+  color: var(--foreground);
+  opacity: 1;
+}
+
+.chapter-sidebar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.chapter-sidebar-item {
+  display: block;
+  padding: 0.65rem 0.85rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: transparent;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.chapter-sidebar-item:hover {
+  background: color-mix(in srgb, var(--foreground) 4%, transparent);
+  border-color: var(--border);
+  opacity: 1;
+}
+
+.chapter-sidebar-item-active {
+  background: color-mix(in srgb, var(--foreground) 8%, transparent);
+  border-color: var(--border);
+  opacity: 1;
+}
+
+.chapter-sidebar-item-num {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--gray-medium);
+  margin-bottom: 0.2rem;
+}
+
+.chapter-sidebar-item-active .chapter-sidebar-item-num {
+  color: var(--accent);
+}
+
+.chapter-sidebar-item-title {
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--foreground);
+}
+
+/* Mobile Drawer */
+.chapter-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 200;
+  display: flex;
+}
+
+.chapter-drawer-content {
+  width: 85%;
+  max-width: 320px;
+  height: 100%;
+  background: var(--background);
+  border-right: 1px solid var(--border);
+  padding: 1.5rem 1.25rem;
+  overflow-y: auto;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.25);
+}
+
+.chapter-sidebar-mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.chapter-sidebar-close-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--foreground);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.chapter-sidebar-close-btn:hover {
+  background: color-mix(in srgb, var(--foreground) 8%, transparent);
+}
+
+/* Tombol Drawer di MiniNavbar */
+.mini-nav-chapters-btn {
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.mini-nav-chapters-btn:hover {
+  background: color-mix(in srgb, var(--foreground) 10%, transparent);
+}
+
+@media (max-width: 959px) {
+  .mini-nav-chapters-btn {
+    display: inline-flex;
+  }
+}
+
+/* Animasi Slide & Fade Drawer */
+@keyframes slideRight {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+.animate-slide-right {
+  animation: slideRight 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease forwards;
+}
+
+/* ===== Table of Contents — Desktop Sidebar Kanan ===== */
+.toc-desktop {
+  display: block;
+}
+
+.toc-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--gray-medium);
   margin-bottom: 0.75rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
 }
 
 .toc-list {
@@ -373,7 +708,7 @@ p {
   font-size: 0.8rem;
   line-height: 1.5;
   color: var(--gray-medium);
-  padding: 0.2rem 0 0.2rem 0.75rem;
+  padding: 0.25rem 0 0.25rem 0.75rem;
   border-left: 2px solid transparent;
   transition: all 0.15s ease;
   text-decoration: none;
@@ -393,6 +728,7 @@ p {
 
 .toc-level-2 a { padding-left: 1.25rem; }
 .toc-level-3 a { padding-left: 1.75rem; font-size: 0.75rem; }
+.toc-level-4 a { padding-left: 2.25rem; font-size: 0.72rem; }
 
 /* ===== Table of Contents — Mobile Collapsible ===== */
 .toc-mobile {
@@ -431,6 +767,7 @@ p {
   padding: 0.5rem 1.25rem 1rem;
   border-top: 1px solid var(--border);
 }
+
 
 /* ===== Scroll To Top Button ===== */
 .scroll-to-top-btn {

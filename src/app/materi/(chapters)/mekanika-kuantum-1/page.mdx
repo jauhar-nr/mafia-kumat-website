@@ -8,12 +8,232 @@ description: Kursus ini akan membahas fenomena mikroskopik dengan pendekatan for
 
 ## 1.1 Metode Mekanika Untuk Mekanika Kuantum 
 
-##### 
-
 ### 1.1.1 Metode Mekanika Untuk Mekanika Kuantum Bagian 1
 
 <YouTubePlayer videoId="Wf_Vwvh-c_U" />
 
-<GDrivePDF id="1cjFtoFydacmU9Sy9FANfZ77HaXGxwpTG" title="Slide Materi 1" />
+> **Materi:** Pengantar Ruang Hilbert dan Notasi Dirac  
+> **Referensi:** *Quantum Mechanics: Concepts and Applications* (Nouredine Zettili, Bab 2)  
+> **Penyusun:** Yovan Fabiano Maitlen
+
+#### 1. Ruang Hilbert
+
+##### Ruang Vektor Linear
+Kalkulus mekanika kuantum dibangun di atas konsep matematika ruang vektor. Sebuah **ruang vektor linear** terdiri dari himpunan vektor $|\psi\rangle, |\phi\rangle, |\chi\rangle, \dots$ dan skalar $a, b, c, \dots$ yang memenuhi:
+
+* **Aturan Penjumlahan:**
+  * **Komutatif:** $|\psi\rangle + |\phi\rangle = |\phi\rangle + |\psi\rangle$
+  * **Asosiatif:** $(|\psi\rangle + |\phi\rangle) + |\chi\rangle = |\psi\rangle + (|\phi\rangle + |\chi\rangle)$
+  * **Ada vektor nol $|0\rangle$** di mana $|\psi\rangle + |0\rangle = |\psi\rangle$
+* **Aturan Perkalian Skalar:**
+  * **Distributif:** $a(|\psi\rangle + |\phi\rangle) = a|\psi\rangle + a|\phi\rangle$
+  * **Asosiatif:** $a(b|\psi\rangle) = (ab)|\psi\rangle$
+
+##### Definisi Ruang Hilbert
+Ruang Hilbert $\mathcal{H}$ adalah ruang vektor linear yang dilengkapi dengan **produk skalar (*inner product*)** yang terdefinisi dengan baik.
+
+**Sifat Produk Skalar $(\psi, \phi)$:**  
+Produk skalar menghasilkan bilangan kompleks dan memenuhi:
+1. **Simetri Miring:** $(\psi, \phi) = (\phi, \psi)^*$
+2. **Linearitas faktor kedua:** $(\psi, a\phi_1 + b\phi_2) = a(\psi, \phi_1) + b(\psi, \phi_2)$
+3. **Antilinearitas faktor pertama:** $(a\psi_1 + b\psi_2, \phi) = a^*(\psi_1, \phi) + b^*(\psi_2, \phi)$
+4. **Kepositifan:** $(\psi, \psi) \ge 0$ (bernilai $0$ hanya jika $\psi = 0$)
+
+##### Fungsi Kuadrat-Dapat Diintegralkan (*Square-Integrable Functions*)
+Di dalam ruang posisi, vektor direpresentasikan oleh fungsi gelombang $\psi(\vec{r}, t)$.
+
+**Square-Integrable Functions:**  
+Sebuah fungsi $\psi$ memiliki makna fisis dalam mekanika kuantum jika fungsi tersebut dapat diintegralkan kuadratnya:
+
+$$
+(\psi, \psi) = \int |\psi(\vec{r}, t)|^2 \, d^3r < \infty
+$$
+
+**Interpretasi Probabilitas (Born):**
+* $|\psi(\vec{r}, t)|^2 \, d^3r$ adalah probabilitas menemukan partikel pada volume $d^3r$.
+* Total probabilitas sama dengan 1 (ternormalisasi):
+
+$$
+\int_{\text{seluruh ruang}} |\psi(\vec{r}, t)|^2 \, d^3r = 1
+$$
+
+#### 2. Notasi Dirac
+
+##### Pengantar Notasi Dirac
+Paul Dirac memperkenalkan notasi abstrak untuk membebaskan vektor keadaan dari sistem koordinat tertentu.
+
+* **Ket (Vektor):** Dilambangkan dengan $|\psi\rangle$ (elemen ruang Hilbert $\mathcal{H}$).
+* **Bra (Vektor Dual):** Dilambangkan dengan $\langle\phi|$ (elemen ruang dual $\mathcal{H}_d$).
+
+**Korespondensi Bra $\longleftrightarrow$ Ket:**
+
+$$
+|\psi\rangle \longleftrightarrow \langle\psi|
+$$
+
+Untuk kombinasi linear, skalar menjadi kompleks konjugatnya:
+
+$$
+a|\psi\rangle + b|\phi\rangle \longleftrightarrow a^*\langle\psi| + b^*\langle\phi|
+$$
+
+##### Produk Skalar (Bra-Ket)
+Produk skalar antara $\phi$ dan $\psi$ ditulis sebagai **Bra-Ket** yang bernilai bilangan kompleks:
+
+$$
+\langle\phi|\psi\rangle \in \mathbb{C}
+$$
+
+**Sifat Utama** *(urutan sangat penting!)*:
+
+$$
+\langle\phi|\psi\rangle = \langle\psi|\phi\rangle^*
+$$
+
+Dalam representasi spasial (kontinu):
+
+$$
+\langle\phi|\psi\rangle = \int \phi^*(\vec{r}, t)\psi(\vec{r}, t) \, d^3r
+$$
+
+##### Sifat-Sifat Penting Notasi Dirac
+* **Norma & Ortonormalitas:** $\langle\psi|\psi\rangle \ge 0$ (jika ternormalisasi, $\langle\psi|\psi\rangle = 1$).  
+  Secara umum dalam basis diskrit:
+
+$$
+\langle\psi_i|\phi_j\rangle = \delta_{ij} \quad (\text{Delta Kronecker})
+$$
+
+* **Ortogonalitas:** Dua keadaan $|\psi\rangle$ dan $|\phi\rangle$ dikatakan ortogonal jika:
+
+$$
+\langle\phi|\psi\rangle = 0
+$$
+
+* **Ketidaksamaan Schwarz:**
+
+$$
+|\langle\phi|\psi\rangle|^2 \le \langle\phi|\phi\rangle \langle\psi|\psi\rangle
+$$
+
+##### Operasi yang Dilarang (*Forbidden Quantities*)
+Dalam aljabar Dirac, beberapa bentuk perkalian **tidak memiliki makna fisis atau matematis** jika berada dalam ruang yang sama:
+* $|\psi\rangle |\phi\rangle$ *(Ket dikali Ket)*
+* $\langle\phi| \langle\psi|$ *(Bra dikali Bra)*
+
+> *Pengecualian:* Perkalian tersebut hanya sah jika keduanya mendeskripsikan ruang yang berbeda (sebagai *Tensor Product* $\otimes$), misalnya gabungan ruang posisi dan ruang spin.
+
+#### 3. Representasi Matriks & Operator
+
+##### Representasi Matriks Ket dan Bra
+Dalam basis diskrit ortonormal, keadaan $|\psi\rangle$ dinyatakan sebagai **vektor kolom**, sedangkan $\langle\psi|$ sebagai **vektor baris**:
+
+$$
+|\psi\rangle = \begin{pmatrix} c_1 \\ c_2 \\ \vdots \\ c_n \end{pmatrix}, \quad \langle\psi| = \begin{pmatrix} c_1^* & c_2^* & \cdots & c_n^* \end{pmatrix}
+$$
+
+**Contoh Konkret 2 Dimensi:**  
+Jika $|\psi\rangle = \begin{pmatrix} 2 \\ i \end{pmatrix}$, maka bentuk Bra-nya adalah:
+
+$$
+\langle\psi| = \begin{pmatrix} 2^* & i^* \end{pmatrix} = \begin{pmatrix} 2 & -i \end{pmatrix}
+$$
+
+*(Perhatikan bahwa unsur imajiner $i$ berubah menjadi konjugat kompleksnya $-i$).*
+
+##### Bra-Ket vs Outer Product
+* **Bra-Ket (*Inner Product* $\rightarrow$ Menghasilkan Skalar):**
+
+$$
+\langle\phi|\psi\rangle = \begin{pmatrix} b_1^* & b_2^* \end{pmatrix} \begin{pmatrix} a_1 \\ a_2 \end{pmatrix} = b_1^* a_1 + b_2^* a_2
+$$
+
+* **Outer Product ($\rightarrow$ Menghasilkan Matriks Persegi $2 \times 2$):**
+
+$$
+|\psi\rangle\langle\phi| = \begin{pmatrix} a_1 \\ a_2 \end{pmatrix} \begin{pmatrix} b_1^* & b_2^* \end{pmatrix} = \begin{pmatrix} a_1 b_1^* & a_1 b_2^* \\ a_2 b_1^* & a_2 b_2^* \end{pmatrix}
+$$
+
+##### Operator Linear & Sifat Hermitian
+* **Operator Linear ($\hat{A}$):** Objek yang mengubah suatu ket menjadi ket lain:
+
+$$
+\hat{A}|\psi\rangle = |\phi\rangle
+$$
+
+* **Elemen Matriks Operator:** Dihitung menggunakan apitan dua keadaan basis:
+
+$$
+A_{ij} = \langle i | \hat{A} | j \rangle
+$$
+
+* **Operator Hermitian ($\hat{A} = \hat{A}^\dagger$):** Operator yang sama dengan konjugat transposnya:
+
+$$
+A = A^\dagger
+$$
+
+* **Signifikansi Fisis:** Besaran terukur (*observable*) wajib direpresentasikan oleh operator Hermitian agar nilai eigennya dijamin **riil**.
+
+#### 4. Contoh Soal & Penyelesaian (Zettili Bab 2)
+
+##### Contoh Soal 1: Normalisasi Keadaan
+**Soal:**  
+Diberikan keadaan kuantum $|\psi\rangle = N \left( |1\rangle + 2i|2\rangle - 2|3\rangle \right)$. Carilah konstanta normalisasi $N$ (dengan asumsi basis ortonormal).
+
+**Penyelesaian:**
+1. Syarat normalisasi:
+
+$$
+\langle\psi|\psi\rangle = 1
+$$
+
+2. Ubah ket menjadi bra:
+
+$$
+\langle\psi| = N^* \left( \langle1| - 2i\langle2| - 2\langle3| \right)
+$$
+
+3. Kalikan bra dan ket:
+
+$$
+\langle\psi|\psi\rangle = |N|^2 \left( 1\cdot 1 + (2i)(-2i) + (-2)(-2) \right)
+$$
+
+$$
+\langle\psi|\psi\rangle = |N|^2 (1 + 4 + 4) = 9|N|^2 = 1
+$$
+
+4. Diperoleh $|N|^2 = \frac{1}{9}$, sehingga konstanta normalisasinya adalah **$N = \frac{1}{3}$**.
+
+##### Contoh Soal 2: Uji Sifat Hermitian Operator
+**Soal:**  
+Misalkan operator $\hat{A}$ direpresentasikan oleh matriks $A = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}$ dalam suatu basis. Tunjukkan apakah operator ini bersifat Hermitian!
+
+**Penyelesaian:**
+1. Syarat operator Hermitian adalah matriksnya sama dengan konjugat transposnya:
+
+$$
+A = A^\dagger
+$$
+
+2. Cari konjugat kompleks dari matriks $A$:
+
+$$
+A^* = \begin{pmatrix} 0 & -(-i) \\ -i & 0 \end{pmatrix} = \begin{pmatrix} 0 & i \\ -i & 0 \end{pmatrix}
+$$
+
+3. Transposkan matriks hasil konjugat tersebut ($A^\dagger = (A^*)^T$):
+
+$$
+A^\dagger = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}
+$$
+
+4. Karena $A = A^\dagger$, maka operator $\hat{A}$ **terbukti merupakan operator Hermitian**.
+
+#### 5. Ringkasan
+* **Ruang Hilbert** menyediakan kerangka matematis yang ketat untuk mekanika kuantum.
+* **Notasi Dirac** (Bra-Ket) serta representasi matriksnya memudahkan perhitungan aljabar keadaan dan transformasi kuantum secara elegan.
+* **Contoh Soal** menunjukkan bagaimana syarat normalisasi ($\langle\psi|\psi\rangle = 1$) dan uji Hermitian ($A = A^\dagger$) diaplikasikan dalam mekanika kuantum nyata.
 
 ### 1.1.2 Metode Mekanika Untuk Mekanika Kuantum Bagian 2
