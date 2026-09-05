@@ -6,18 +6,28 @@ export function ChapterSidebar({ chapters = [], isMobile = false, onClose }) {
   const pathname = usePathname();
   const currentSlug = pathname.split('/').filter(Boolean).pop();
 
+  // Kelompokkan bab berdasarkan topik utama (track)
+  const groupedTracks = chapters.reduce((acc, chapter) => {
+    const trackName = chapter.track || 'Fisika & Mekanika Kuantum';
+    if (!acc[trackName]) {
+      acc[trackName] = [];
+    }
+    acc[trackName].push(chapter);
+    return acc;
+  }, {});
+
   return (
-    <nav 
+    <nav
       className={`chapter-sidebar ${isMobile ? 'chapter-sidebar-mobile' : 'chapter-sidebar-desktop'}`}
-      aria-label="Navigasi Bab"
+      aria-label="Navigasi Materi"
     >
       {isMobile && (
         <div className="chapter-sidebar-mobile-header">
           <div style={{ fontWeight: '700', fontSize: '1rem' }}>Silabus Materi</div>
-          <button 
+          <button
             onClick={onClose}
             className="chapter-sidebar-close-btn"
-            aria-label="Tutup daftar bab"
+            aria-label="Tutup daftar materi"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="18" y1="6" x2="6" y2="18" />
@@ -28,29 +38,46 @@ export function ChapterSidebar({ chapters = [], isMobile = false, onClose }) {
       )}
 
       <div className="chapter-sidebar-header">
-        <span className="chapter-sidebar-title">Daftar Bab</span>
+        <span className="chapter-sidebar-title">Kurikulum</span>
         <Link href="/materi" className="chapter-sidebar-all-link" onClick={isMobile ? onClose : undefined}>
           Semua Materi &rarr;
         </Link>
       </div>
 
-      <div className="chapter-sidebar-list">
-        {chapters.map((chapter, index) => {
-          const isActive = chapter.slug === currentSlug;
-          const chapterNumber = String(index + 1).padStart(2, '0');
-
-          return (
-            <Link
-              key={chapter.slug}
-              href={`/materi/${chapter.slug}`}
-              onClick={isMobile ? onClose : undefined}
-              className={`chapter-sidebar-item ${isActive ? 'chapter-sidebar-item-active' : ''}`}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginTop: '1rem' }}>
+        {Object.entries(groupedTracks).map(([trackName, trackChapters]) => (
+          <div key={trackName}>
+            <div
+              style={{
+                fontSize: '0.72rem',
+                fontWeight: '700',
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em',
+                color: 'var(--gray-medium)',
+                marginBottom: '0.45rem',
+                paddingLeft: '0.5rem',
+              }}
             >
-              <div className="chapter-sidebar-item-num">BAB {chapterNumber}</div>
-              <div className="chapter-sidebar-item-title">{chapter.title}</div>
-            </Link>
-          );
-        })}
+              {trackName}
+            </div>
+
+            <div className="chapter-sidebar-list">
+              {trackChapters.map((chapter) => {
+                const isActive = chapter.slug === currentSlug;
+                return (
+                  <Link
+                    key={chapter.slug}
+                    href={`/materi/${chapter.slug}`}
+                    onClick={isMobile ? onClose : undefined}
+                    className={`chapter-sidebar-item ${isActive ? 'chapter-sidebar-item-active' : ''}`}
+                  >
+                    <div className="chapter-sidebar-item-title">{chapter.title}</div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        ))}
       </div>
     </nav>
   );

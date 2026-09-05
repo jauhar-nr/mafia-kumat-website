@@ -3,8 +3,42 @@ import path from 'path';
 import matter from 'gray-matter';
 
 /**
- * Membaca daftar bab dari folder (chapters) secara statis di server.
- * Mengembalikan array { slug, title, description } yang sudah diurutkan berdasarkan slug.
+ * 4 Topik Utama (Jalur Belajar) Mafia Kumat
+ */
+export const TRACKS = [
+  {
+    id: 'matematika-esensial-fisika',
+    name: 'Matematika Esensial Fisika',
+    description: 'Fondasi aljabar linear, kalkulus variasi, ruang Hilbert, dan metode analitis esensial untuk memodelkan hukum-hukum fisika modern.',
+    badge: 'Matematika',
+    icon: 'math',
+  },
+  {
+    id: 'fisika-mekanika-kuantum',
+    name: 'Fisika & Mekanika Kuantum',
+    description: 'Eksplorasi mendalam fenomena mikroskopik, formalisme bra-ket Dirac, osilator harmonik, atom hidrogen, hingga teori perturbasi.',
+    badge: 'Kuantum',
+    icon: 'atom',
+  },
+  {
+    id: 'mekanika-klasik-lanjut',
+    name: 'Mekanika Klasik Lanjut',
+    description: 'Formalisasi hukum gerak lanjut mulai dari prinsip aksi minimum, mekanika Lagrangian, formalisme Hamiltonian, hingga persamaan kanonik.',
+    badge: 'Klasik',
+    icon: 'classical',
+  },
+  {
+    id: 'kuantum-material',
+    name: 'Kuantum Material',
+    description: 'Penerapan prinsip kuantum pada fisika zat padat, struktur kristal, teori pita energi, semikonduktor, hingga fenomena material modern.',
+    badge: 'Material',
+    icon: 'material',
+  },
+];
+
+/**
+ * Membaca seluruh modul materi dari direktori (chapters) secara statis di server.
+ * Mengembalikan array modul materi yang terurut rapi berdasarkan Jalur Belajar dan Nomor Urut.
  */
 export function getChapters() {
   const chaptersDir = path.join(process.cwd(), 'src/app/materi/(chapters)');
@@ -23,6 +57,8 @@ export function getChapters() {
         return {
           slug,
           title: data.title || slug,
+          track: data.track || 'Fisika & Mekanika Kuantum',
+          order: typeof data.order === 'number' ? data.order : 99,
           description: data.description || '',
         };
       }
@@ -30,6 +66,27 @@ export function getChapters() {
     })
     .filter(Boolean);
 
-  // Mengurutkan berdasarkan nama folder (slug) agar urut (01, 02, dst)
-  return chapters.sort((a, b) => a.slug.localeCompare(b.slug));
+  const trackOrderMap = TRACKS.reduce((acc, t, idx) => {
+    acc[t.name] = idx;
+    return acc;
+  }, {});
+
+  return chapters.sort((a, b) => {
+    const trackA = trackOrderMap[a.track] ?? 99;
+    const trackB = trackOrderMap[b.track] ?? 99;
+    if (trackA !== trackB) return trackA - trackB;
+    if (a.order !== b.order) return a.order - b.order;
+    return a.title.localeCompare(b.title);
+  });
+}
+
+/**
+ * Mengelompokkan materi ke dalam masing-masing Jalur Belajar (Track).
+ */
+export function getTracksWithChapters() {
+  const allChapters = getChapters();
+  return TRACKS.map(track => ({
+    ...track,
+    chapters: allChapters.filter(c => c.track === track.name),
+  }));
 }

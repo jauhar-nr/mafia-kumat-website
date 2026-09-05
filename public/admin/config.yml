@@ -16,9 +16,20 @@ collections:
     extension: "mdx"
     format: "frontmatter"
     fields:
-      - { label: "Judul Bab", name: "title", widget: "string" }
+      - { label: "Judul Materi", name: "title", widget: "string" }
       - {
-          label: "Nomor Urut",
+          label: "Topik Utama (Jalur Belajar)",
+          name: "track",
+          widget: "select",
+          options:
+            - "Matematika Esensial Fisika"
+            - "Fisika & Mekanika Kuantum"
+            - "Mekanika Klasik Lanjut"
+            - "Kuantum Material",
+          default: "Fisika & Mekanika Kuantum",
+        }
+      - {
+          label: "Nomor Urut dalam Topik",
           name: "order",
           widget: "number",
           value_type: "int",
