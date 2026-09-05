@@ -18,7 +18,7 @@ export default async function MateriIndex({ searchParams }) {
   return (
     <>
       <MiniNavbar backHref="/" backText="Beranda" />
-      <div className="container" style={{ padding: '3rem 1.5rem 4rem', maxWidth: '1040px' }}>
+      <div className="container materi-page-container" style={{ padding: '3rem 1.5rem 4rem', maxWidth: '1040px' }}>
         <h1
           className="animate-fade-up"
           style={{ fontSize: '2.4rem', fontWeight: '800', letterSpacing: '-0.03em', marginBottom: '0.5rem', borderBottom: 'none' }}

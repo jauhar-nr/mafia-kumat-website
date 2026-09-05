@@ -190,7 +190,7 @@ export default function MateriList({
             if (trackTopics.length === 0) return null;
 
             return (
-              <section key={track.id} style={{ marginBottom: '2.25rem' }}>
+              <section key={track.id} className="topic-section">
                 <div
                   style={{
                     display: 'flex',
@@ -238,6 +238,7 @@ export default function MateriList({
                       onToggle={() => toggleAccordion(topic.slug)}
                       isSearching={false}
                       queryLower=""
+                      showTrackBadge={false}
                     />
                   ))}
                 </div>
@@ -265,6 +266,7 @@ export default function MateriList({
                   onToggle={() => toggleAccordion(topic.slug)}
                   isSearching={isSearching}
                   queryLower={queryLower}
+                  showTrackBadge={isSearching}
                 />
               );
             })}
@@ -275,7 +277,7 @@ export default function MateriList({
   );
 }
 
-function TopicCard({ topic, isExpanded, onToggle, isSearching, queryLower }) {
+function TopicCard({ topic, isExpanded, onToggle, isSearching, queryLower, showTrackBadge = true }) {
   const chapters = topic.chapters || [];
   const hasChapters = chapters.length > 0;
   const firstChapter = hasChapters ? chapters[0] : null;
@@ -292,7 +294,7 @@ function TopicCard({ topic, isExpanded, onToggle, isSearching, queryLower }) {
       }}
     >
       {/* Top Header Card */}
-      <div style={{ padding: '1.15rem 1.35rem' }}>
+      <div className="topic-card-body">
         <div
           style={{
             display: 'flex',
@@ -303,20 +305,22 @@ function TopicCard({ topic, isExpanded, onToggle, isSearching, queryLower }) {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', minWidth: 0 }}>
-            <span
-              style={{
-                fontSize: '0.72rem',
-                fontWeight: '700',
-                color: 'var(--gray-medium)',
-                textTransform: 'uppercase',
-                letterSpacing: '0.04em',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                whiteSpace: 'nowrap',
-              }}
-            >
-              {topic.track}
-            </span>
+            {showTrackBadge && (
+              <span
+                style={{
+                  fontSize: '0.72rem',
+                  fontWeight: '700',
+                  color: 'var(--gray-medium)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.04em',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                {topic.track}
+              </span>
+            )}
             <span
               style={{
                 fontSize: '0.7rem',
@@ -359,48 +363,17 @@ function TopicCard({ topic, isExpanded, onToggle, isSearching, queryLower }) {
           href={`/materi/${topic.slug}`}
           style={{ textDecoration: 'none', color: 'inherit' }}
         >
-          <h3
-            style={{
-              fontSize: '1.18rem',
-              fontWeight: '750',
-              letterSpacing: '-0.02em',
-              margin: '0 0 0.35rem 0',
-              color: 'var(--foreground)',
-              lineHeight: '1.3',
-            }}
-          >
+          <h3 className="topic-card-title">
             {topic.title}
           </h3>
         </Link>
 
-        <p
-          style={{
-            margin: 0,
-            fontSize: '0.86rem',
-            lineHeight: '1.5',
-            color: 'var(--gray-medium)',
-            display: '-webkit-box',
-            WebkitLineClamp: 2,
-            WebkitBoxOrient: 'vertical',
-            overflow: 'hidden',
-          }}
-        >
+        <p className="topic-card-desc">
           {topic.description}
         </p>
 
         {/* Action Bottom Bar */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            marginTop: '0.85rem',
-            paddingTop: '0.65rem',
-            borderTop: '1px solid var(--border)',
-            flexWrap: 'wrap',
-            gap: '0.5rem',
-          }}
-        >
+        <div className="topic-card-actions">
           {hasChapters ? (
             <button
               onClick={onToggle}
