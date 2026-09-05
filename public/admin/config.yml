@@ -16,28 +16,30 @@ collections:
     extension: "mdx"
     format: "frontmatter"
     fields:
-      - { label: "Judul Materi", name: "title", widget: "string" }
-      - {
-          label: "Topik Utama (Jalur Belajar)",
-          name: "track",
-          widget: "select",
-          options:
-            - "Matematika Esensial Fisika"
-            - "Fisika & Mekanika Kuantum"
-            - "Mekanika Klasik Lanjut"
-            - "Kuantum Material",
-          default: "Fisika & Mekanika Kuantum",
-        }
-      - {
-          label: "Nomor Urut dalam Topik",
-          name: "order",
-          widget: "number",
-          value_type: "int",
-        }
-      - { label: "Deskripsi Singkat", name: "description", widget: "text" }
-      - {
-          label: "Isi Materi",
-          name: "body",
-          widget: "markdown",
-          hint: 'Ketik: <GDrivePDF id="ID_DRIVE" title="Judul" /> untuk menyisipkan PDF dari Google Drive.',
-        }
+      - label: "Judul Materi"
+        name: "title"
+        widget: "string"
+
+      - label: "Topik Utama (Jalur Belajar)"
+        name: "track"
+        widget: "select"
+        options:
+          - "Matematika Esensial Fisika"
+          - "Fisika & Mekanika Kuantum"
+          - "Mekanika Klasik Lanjut"
+          - "Kuantum Material"
+        default: "Fisika & Mekanika Kuantum"
+
+      - label: "Nomor Urut dalam Topik"
+        name: "order"
+        widget: "number"
+        value_type: "int"
+
+      - label: "Deskripsi Singkat"
+        name: "description"
+        widget: "text"
+
+      - label: "Isi Materi"
+        name: "body"
+        widget: "markdown"
+        hint: 'Ketik: <GDrivePDF id="ID_DRIVE" title="Judul" /> untuk menyisipkan PDF dari Google Drive.'
