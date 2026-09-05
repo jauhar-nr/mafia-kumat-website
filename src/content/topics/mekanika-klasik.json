@@ -1,0 +1,14 @@
+{
+  "title": "Mekanika Klasik",
+  "slug": "mekanika-klasik",
+  "track": "Mekanika Klasik",
+  "order": 1,
+  "coverImage": "",
+  "description": "Formalisasi hukum gerak mulai dari prinsip aksi minimum, mekanika Lagrangian, formalisme Hamiltonian, hingga persamaan kanonik.",
+  "authors": [
+    "Tim Mafia Kumat"
+  ],
+  "references": [
+    "Goldstein, H., Poole, C., & Safko, J. (2002). Classical Mechanics (3rd ed.). Addison-Wesley."
+  ]
+}

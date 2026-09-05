@@ -8,17 +8,26 @@ media_folder: "public/media"
 public_folder: "/media"
 
 collections:
-  - name: "chapters"
-    label: "Materi Belajar"
-    folder: "src/app/materi/(chapters)"
+  - name: "topics"
+    label: "Topik Belajar (Induk)"
+    label_singular: "Topik Belajar"
+    folder: "src/content/topics"
     create: true
-    path: "{{slug}}/page"
-    extension: "mdx"
-    format: "frontmatter"
+    identifier_field: "title"
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    summary: "{{title}} ({{track}}) — Urutan: {{order}}"
     fields:
-      - label: "Judul Materi"
+      - label: "Judul Topik"
         name: "title"
         widget: "string"
+        hint: "Contoh: Fisika Kuantum, Mekanika Kuantum 1, Mekanika Klasik"
+
+      - label: "Slug Topik (URL)"
+        name: "slug"
+        widget: "string"
+        hint: "Contoh: fisika-kuantum, mekanika-kuantum-1"
 
       - label: "Lintasan Belajar"
         name: "track"
@@ -34,12 +43,72 @@ collections:
         name: "order"
         widget: "number"
         value_type: "int"
+        default: 1
 
-      - label: "Deskripsi Singkat"
+      - label: "Gambar Sampul Topik (Cover)"
+        name: "coverImage"
+        widget: "image"
+        required: false
+        hint: "Pilih ilustrasi/sampul untuk halaman overview topik"
+
+      - label: "Deskripsi Lengkap Topik"
         name: "description"
         widget: "text"
 
-      - label: "Isi Materi"
+      - label: "Penyusun / Kontributor"
+        name: "authors"
+        widget: "list"
+        required: false
+        default: ["Tim Mafia Kumat"]
+
+      - label: "Buku Referensi Utama"
+        name: "references"
+        widget: "list"
+        required: false
+        hint: "Contoh: Gasiorowicz, S. (2003). Quantum physics (3rd ed.). John Wiley & Sons."
+
+  - name: "chapters"
+    label: "Bab Materi"
+    label_singular: "Bab Materi"
+    folder: "src/content/chapters"
+    create: true
+    path: "{{topic}}/{{slug}}"
+    extension: "mdx"
+    format: "frontmatter"
+    summary: "Bab {{chapterNumber}}: {{title}} (Topik: {{topic}})"
+    fields:
+      - label: "Topik Induk"
+        name: "topic"
+        widget: "relation"
+        collection: "topics"
+        search_fields: ["title", "slug"]
+        value_field: "slug"
+        display_fields: ["title"]
+        hint: "Pilih topik belajar yang menaungi bab materi ini"
+
+      - label: "Nomor Bab"
+        name: "chapterNumber"
+        widget: "number"
+        value_type: "int"
+        default: 1
+        hint: "Nomor urut bab di dalam topik (1, 2, 3, dst.)"
+
+      - label: "Judul Bab"
+        name: "title"
+        widget: "string"
+        hint: "Contoh: Radiasi Benda Hitam, Efek Fotolistrik, Ruang Hilbert"
+
+      - label: "Slug Bab (URL)"
+        name: "slug"
+        widget: "string"
+        hint: "Contoh: 01-radiasi-benda-hitam, 02-efek-fotolistrik"
+
+      - label: "Deskripsi Singkat Bab"
+        name: "description"
+        widget: "text"
+        hint: "Ringkasan isi bab yang akan ditampilkan di silabus dan hasil pencarian"
+
+      - label: "Isi Bab Materi (MDX)"
         name: "body"
         widget: "markdown"
-        hint: 'Ketik: <GDrivePDF id="ID_DRIVE" title="Judul" /> untuk menyisipkan PDF dari Google Drive.'
+        hint: 'Mendukung LaTeX ($...$ dan $$...$$), <YouTubePlayer videoId="ID" />, dan <GDrivePDF id="ID" title="Judul" />.'

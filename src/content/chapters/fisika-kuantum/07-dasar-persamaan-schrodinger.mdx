@@ -1,0 +1,49 @@
+---
+title: "Dasar Persamaan Schrodinger"
+slug: "07-dasar-persamaan-schrodinger"
+topic: "fisika-kuantum"
+chapterNumber: 7
+description: "Persamaan diferensial fundamental evolusi dinamika kuantum: Persamaan Schrodinger bergantung waktu dan tak-bergantung waktu."
+---
+
+# Bab 7 : Dasar Persamaan Schrodinger
+
+> **Materi:** Dasar Persamaan Schrodinger  
+> **Referensi:** Gasiorowicz, S. (2003). *Quantum physics* (3rd ed.). John Wiley & Sons.  
+> **Penyusun:** Yovan Fabiano Maitlen  
+
+Persamaan Schrodinger, yang dirumuskan oleh Erwin Schrodinger pada tahun 1925, memainkan peran yang setara dengan hukum kedua Newton ($\vec{F} = m\vec{a}$) dalam mekanika klasik: persamaan ini memprediksi evolusi keadaan fisis partikel bermassa non-relativistik terhadap ruang dan waktu.
+
+## 1. Persamaan Schrodinger Bergantung Waktu (TDSE)
+
+Untuk partikel bermassa $m$ yang bergerak di bawah pengaruh medan potensial $V(\vec{r}, t)$, Persamaan Schrodinger bergantung waktu dinyatakan sebagai:
+
+$$
+i\hbar \frac{\partial \psi(\vec{r}, t)}{\partial t} = \left( -\frac{\hbar^2}{2m} \nabla^2 + V(\vec{r}, t) \right) \psi(\vec{r}, t)
+$$
+
+Operator di sisi kanan adalah **Operator Hamiltonian** sistem:
+
+$$
+\hat{H} = -\frac{\hbar^2}{2m} \nabla^2 + V(\vec{r}, t) = \frac{\hat{p}^2}{2m} + V(\vec{r}, t)
+$$
+
+Sehingga persamaan dapat disederhanakan dalam bentuk operator elegan:
+
+$$
+i\hbar \frac{\partial}{\partial t} \psi = \hat{H} \psi
+$$
+
+## 2. Persamaan Schrodinger Tak-Bergantung Waktu (TISE)
+
+Jika potensial sistem tidak bergantung waktu secara eksplisit ($V = V(\vec{r})$), kita dapat memisahkan variabel $\psi(\vec{r}, t) = \phi(\vec{r}) e^{-iEt/\hbar}$, menghasilkan **Persamaan Nilai Eigen Energi**:
+
+$$
+\hat{H}\phi(\vec{r}) = E \phi(\vec{r})
+$$
+
+Di mana $E$ adalah nilai eigen energi terukur dari sistem, yang mengarah pada keadaan stasioner dengan densitas probabilitas konstan terhadap waktu:
+
+$$
+|\psi(\vec{r}, t)|^2 = |\phi(\vec{r})|^2
+$$

@@ -1,0 +1,15 @@
+{
+  "title": "Fisika Kuantum",
+  "slug": "fisika-kuantum",
+  "track": "Fisika & Mekanika Kuantum",
+  "order": 1,
+  "coverImage": "",
+  "description": "Pembahasan fenomena mikroskopis dengan pendekatan fenomenologis, diawali dengan radiasi benda hitam dan diakhiri dengan dasar Persamaan Schrodinger, sebagai jembatan untuk memahami Mekanika Kuantum 1.",
+  "authors": [
+    "Yovan Fabiano Maitlen",
+    "Tim Mafia Kumat"
+  ],
+  "references": [
+    "Gasiorowicz, S. (2003). Quantum physics (3rd ed.). John Wiley & Sons."
+  ]
+}

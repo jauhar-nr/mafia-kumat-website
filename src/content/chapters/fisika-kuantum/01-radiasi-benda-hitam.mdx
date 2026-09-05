@@ -1,0 +1,74 @@
+---
+title: "Radiasi Benda Hitam"
+slug: "01-radiasi-benda-hitam"
+topic: "fisika-kuantum"
+chapterNumber: 1
+description: "Eksplorasi fenomena radiasi termal benda hitam, bencana ultraviolet pada fisika klasik, dan kelahiran hipotesis kuanta energi oleh Max Planck."
+---
+
+# Bab 1 : Radiasi Benda Hitam
+
+> **Materi:** Radiasi Benda Hitam  
+> **Referensi:** Gasiorowicz, S. (2003). *Quantum physics* (3rd ed.). John Wiley & Sons.  
+> **Penyusun:** Yovan Fabiano Maitlen  
+
+Radiasi benda hitam merupakan gerbang pembuka lahirnya fisika kuantum modern pada pergantian abad ke-20. Benda hitam ideal didefinisikan sebagai benda yang menyerap seluruh radiasi elektromagnetik yang mengenainya tanpa ada yang dipantulkan. Ketika dipanaskan pada temperatur tertentu $T$, benda tersebut memancarkan radiasi termal dengan spektrum karakteristik yang hanya bergantung pada temperaturnya, bukan pada material pembentuknya.
+
+## 1. Kegagalan Fisika Klasik: Bencana Ultraviolet
+
+Menjelang akhir abad ke-19, fisikawan berusaha menjelaskan spektrum radiasi benda hitam menggunakan termodinamika dan elektrodinamika klasik Maxwell:
+
+* **Hukum Rayleigh-Jeans:** Menghitung rapat spektral energi menggunakan prinsip ekuipartisi energi klasik $\langle E \rangle = kT$:
+
+$$
+u(\nu, T) \, d\nu = \frac{8\pi \nu^2}{c^3} kT \, d\nu
+$$
+
+* **Bencana Ultraviolet (*Ultraviolet Catastrophe*):** Formula klasik di atas meramalkan bahwa untuk frekuensi tinggi ($\nu \to \infty$, daerah ultraviolet), rapat energi akan menuju tak hingga ($\infty$). Ini jelas bertentangan dengan kenyataan eksperimen di mana intensitas radiasi justru meluruh menuju nol pada frekuensi tinggi.
+
+## 2. Hipotesis Kuanta Max Planck (1900)
+
+Untuk mengatasi anomali tersebut, Max Planck mengajukan postulat radikal:
+
+1. Dinding rongga benda hitam tersusun dari osilator-osilator atomik yang menyerap dan memancarkan radiasi.
+2. Energi osilator **tidaklah kontinu**, melainkan **terkuantisasi** dalam kelipatan diskrit suatu paket energi elementer:
+
+$$
+E_n = n \cdot h\nu, \quad n \in \{0, 1, 2, \dots\}
+$$
+
+di mana $h = 6.626 \times 10^{-34} \text{ J}\cdot\text{s}$ adalah **Konstanta Planck**.
+
+## 3. Hukum Distribusi Radiasi Planck
+
+Dengan menggunakan statistik Maxwell-Boltzmann pada tingkat energi diskrit, Planck memperoleh energi rata-rata osilator:
+
+$$
+\langle E \rangle = \frac{h\nu}{e^{\frac{h\nu}{kT}} - 1}
+$$
+
+Sehingga rumus rapat energi radiasi spektral benda hitam menjadi:
+
+$$
+u(\nu, T) \, d\nu = \frac{8\pi h \nu^3}{c^3} \frac{1}{e^{\frac{h\nu}{kT}} - 1} \, d\nu
+$$
+
+Atau dalam panjang gelombang $\lambda$ ($c = \lambda\nu$):
+
+$$
+u(\lambda, T) \, d\lambda = \frac{8\pi hc}{\lambda^5} \frac{1}{e^{\frac{hc}{\lambda kT}} - 1} \, d\lambda
+$$
+
+## 4. Limit Pendekatan Spektral
+
+* **Pada Frekuensi Rendah ($h\nu \ll kT$):**  
+  Ekspansi Taylor $e^{x} \approx 1 + x$ menghasilkan:
+
+$$
+\frac{1}{e^{\frac{h\nu}{kT}} - 1} \approx \frac{kT}{h\nu}
+$$
+
+  Rumus Planck tereduksi kembali menjadi hukum klasik Rayleigh-Jeans.
+
+* **Pada Frekuensi Tinggi ($h\nu \gg kT$):**  
+  Suku eksponensial mendominasi penyebut, menghasilkan hukum perpindahan Wien yang meluruh eksponensial menuju nol, menyelesaikan masalah Bencana Ultraviolet secara sempurna.

@@ -1,0 +1,39 @@
+---
+title: "Fungsi Gelombang"
+slug: "06-fungsi-gelombang"
+topic: "fisika-kuantum"
+chapterNumber: 6
+description: "Representasi keadaan fisis sistem kuantum melalui fungsi gelombang bernilai kompleks dan interpretasi densitas probabilitas Max Born."
+---
+
+# Bab 6 : Fungsi Gelombang
+
+> **Materi:** Fungsi Gelombang  
+> **Referensi:** Gasiorowicz, S. (2003). *Quantum physics* (3rd ed.). John Wiley & Sons.  
+> **Penyusun:** Yovan Fabiano Maitlen  
+
+Dalam mekanika gelombang kuantum, keadaan lengkap suatu partikel dinyatakan oleh fungsi gelombang bernilai kompleks $\psi(\vec{r}, t)$.
+
+## 1. Postulat Born: Interpretasi Probabilistik
+
+Fungsi gelombang $\psi$ itu sendiri bukanlah besaran yang dapat diukur secara langsung di laboratorium karena dapat berupa bilangan imajiner/kompleks. Namun, kuadrat magnitudo mutlaknya $|\psi(\vec{r}, t)|^2 = \psi^* \psi$ memiliki makna fisis nyata:
+
+$$
+P(\vec{r}, t) \, d^3r = |\psi(\vec{r}, t)|^2 \, d^3r
+$$
+
+adalah **probabilitas** menemukan partikel di dalam elemen volume $d^3r$ di sekitar posisi $\vec{r}$ pada waktu $t$.
+
+## 2. Syarat Normalisasi dan Syarat Fisik
+
+Karena partikel pasti berada di suatu tempat dalam alam semesta, total probabilitas di seluruh ruang haruslah bernilai 1:
+
+$$
+\int_{-\infty}^{\infty} |\psi(\vec{r}, t)|^2 \, d^3r = 1
+$$
+
+Agar sebuah fungsi gelombang dapat diterima secara fisis (*well-behaved*), $\psi(\vec{r})$ harus memenuhi:
+1. Bernilai tunggal (*single-valued*).
+2. Kontinu di seluruh ruang.
+3. Turunan pertamanya $\frac{\partial\psi}{\partial x}$ kontinu (kecuali jika potensial bernilai tak terhingga).
+4. Dapat diintegralkan kuadratnya (*square-integrable*).

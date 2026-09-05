@@ -11,17 +11,20 @@ import { ScrollToTop } from './ScrollToTop';
 import { Footer } from './Footer';
 import { LatexCopyOverlay } from './LatexCopyOverlay';
 
-export function ChapterLayoutClient({ chapters = [], children }) {
+export function ChapterLayoutClient({ chapters = [], topic, currentChapter, children }) {
   const [isMobileDrawerOpen, setIsMobileDrawerOpen] = useState(false);
   const pathname = usePathname();
+
+  const backHref = topic ? `/materi/${topic.slug}` : '/materi';
+  const backText = topic ? 'Overview Topik' : 'Silabus';
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <ReadingProgress />
 
       <MiniNavbar 
-        backHref="/materi" 
-        backText="Silabus" 
+        backHref={backHref} 
+        backText={backText} 
         onToggleChapters={() => setIsMobileDrawerOpen(true)} 
       />
 
@@ -37,6 +40,7 @@ export function ChapterLayoutClient({ chapters = [], children }) {
           >
             <ChapterSidebar 
               chapters={chapters} 
+              topic={topic}
               isMobile={true} 
               onClose={() => setIsMobileDrawerOpen(false)} 
             />
@@ -50,16 +54,16 @@ export function ChapterLayoutClient({ chapters = [], children }) {
           {/* Kolom 1: Navigasi Bab (Kiri) */}
           <aside className="chapter-sidebar-desktop-col">
             <div className="sticky-sidebar-inner">
-              <ChapterSidebar chapters={chapters} />
+              <ChapterSidebar chapters={chapters} topic={topic} />
             </div>
           </aside>
 
           {/* Kolom 2: Konten Materi (Tengah) */}
           <main className="markdown-body" style={{ minWidth: 0, position: 'relative' }}>
-            <Breadcrumbs chapters={chapters} />
+            <Breadcrumbs chapters={chapters} topic={topic} chapter={currentChapter} />
             <LatexCopyOverlay key={pathname} />
             {children}
-            <ChapterNavigation chapters={chapters} />
+            <ChapterNavigation chapters={chapters} topic={topic} />
           </main>
 
           {/* Kolom 3: Table of Contents (Kanan) */}

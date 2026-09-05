@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { GrapheneLatticeAnimation } from "../components/GrapheneLatticeAnimation";
-import { getTracksWithChapters, getChapters } from "../lib/chapters";
+import { getTracksWithTopics, getTopics } from "../lib/topics";
 
 function TrackIcon({ type }) {
   if (type === "math") {
@@ -44,8 +44,8 @@ function TrackIcon({ type }) {
 }
 
 export default function Home() {
-  const tracks = getTracksWithChapters();
-  const allChapters = getChapters();
+  const tracks = getTracksWithTopics();
+  const allTopics = getTopics();
 
   return (
     <main style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
@@ -96,7 +96,7 @@ export default function Home() {
               style={{ display: "flex", gap: "1rem", marginTop: "3rem", flexWrap: "wrap" }}
             >
               <Link
-                href={allChapters.length > 0 ? `/materi/${allChapters[0].slug}` : '/materi'}
+                href={allTopics.length > 0 ? `/materi/${allTopics[0].slug}` : '/materi'}
                 className="btn btn-primary"
               >
                 Mulai Belajar
@@ -192,18 +192,18 @@ export default function Home() {
                         padding: "0.28rem 0.65rem",
                         borderRadius: "999px",
                         background:
-                          track.chapters.length > 0
+                          track.topics.length > 0
                             ? "color-mix(in srgb, var(--accent) 10%, transparent)"
                             : "color-mix(in srgb, var(--foreground) 4%, transparent)",
                         color:
-                          track.chapters.length > 0
+                          track.topics.length > 0
                             ? "var(--foreground)"
                             : "var(--gray-medium)",
                         border: "1px solid var(--border)",
                       }}
                     >
-                      {track.chapters.length > 0
-                        ? `${track.chapters.length} Topik Tersedia`
+                      {track.topics.length > 0
+                        ? `${track.topics.length} Topik Tersedia`
                         : "Segera Hadir"}
                     </span>
                   </div>
@@ -238,7 +238,7 @@ export default function Home() {
                     borderTop: "1px solid var(--border)",
                   }}
                 >
-                  {track.chapters.length > 0 ? (
+                  {track.topics.length > 0 ? (
                     <Link
                       href={`/materi?track=${encodeURIComponent(track.name)}`}
                       style={{
