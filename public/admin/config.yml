@@ -76,6 +76,23 @@ collections:
     extension: "mdx"
     format: "frontmatter"
     summary: "Bab {{chapterNumber}}: {{title}} (Topik: {{topic}})"
+    sortable_fields:
+      - "chapterNumber"
+      - "title"
+      - "topic"
+    view_groups:
+      - label: "Topik"
+        field: "topic"
+    view_filters:
+      - label: "Fisika Kuantum"
+        field: "topic"
+        pattern: "fisika-kuantum"
+      - label: "Mekanika Kuantum 1"
+        field: "topic"
+        pattern: "mekanika-kuantum-1"
+      - label: "Mekanika Klasik"
+        field: "topic"
+        pattern: "mekanika-klasik"
     fields:
       - label: "Topik Induk"
         name: "topic"
