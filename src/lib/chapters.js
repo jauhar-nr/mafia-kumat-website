@@ -21,9 +21,9 @@ export const TRACKS = [
     icon: 'atom',
   },
   {
-    id: 'mekanika-klasik-lanjut',
-    name: 'Mekanika Klasik Lanjut',
-    description: 'Formalisasi hukum gerak lanjut mulai dari prinsip aksi minimum, mekanika Lagrangian, formalisme Hamiltonian, hingga persamaan kanonik.',
+    id: 'mekanika-klasik',
+    name: 'Mekanika Klasik',
+    description: 'Formalisasi hukum gerak mulai dari prinsip aksi minimum, mekanika Lagrangian, formalisme Hamiltonian, hingga persamaan kanonik.',
     badge: 'Klasik',
     icon: 'classical',
   },

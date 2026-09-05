@@ -26,7 +26,7 @@ collections:
         options:
           - "Matematika Esensial Fisika"
           - "Fisika & Mekanika Kuantum"
-          - "Mekanika Klasik Lanjut"
+          - "Mekanika Klasik"
           - "Kuantum Material"
         default: "Fisika & Mekanika Kuantum"
 

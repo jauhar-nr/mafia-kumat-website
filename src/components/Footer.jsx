@@ -3,8 +3,8 @@ import Link from 'next/link';
 export function Footer() {
   return (
     <footer className="site-footer">
-      <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
+      <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap', justifyContent: 'center' }}>
           <Link href="/" style={{ fontWeight: '800', fontSize: '1.1rem', letterSpacing: '-0.05em' }}>
             Mafia <span style={{ color: 'var(--gray-medium)' }}>Kumat</span>
           </Link>
@@ -22,6 +22,19 @@ export function Footer() {
             YouTube
           </a>
         </div>
+
+        <p style={{ margin: 0, fontSize: '0.8rem', color: 'var(--gray-medium)', textAlign: 'center', lineHeight: '1.6' }}>
+          Seluruh materi di situs ini dilisensikan di bawah{' '}
+          <a
+            href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: 'underline', color: 'var(--foreground)', textUnderlineOffset: '3px' }}
+          >
+            Creative Commons (CC BY-NC-SA 4.0)
+          </a>.
+        </p>
+
         <p style={{ margin: 0, fontSize: '0.75rem', color: 'var(--gray-medium)' }}>
           &copy; {new Date().getFullYear()} Tim Mafia Kumat. Dibangun dengan Next.js.
         </p>
