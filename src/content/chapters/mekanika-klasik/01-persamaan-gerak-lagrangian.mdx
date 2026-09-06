@@ -34,11 +34,19 @@ $$
 L(q_1, q_2,...,\dot{q_1},\dot{q_2},t)
 $$
 
-atau yang dalam bentuk yang lebih singkat $L(q,\dot{q},t)$. Jalannya fungsi Lagrange $t_1$ ke $t_2$ atau integrasi dinyatakan sebagai aksi:
+atau yang dalam bentuk yang lebih singkat $L(q,\dot{q},t)$, kenyataan bahwa fungsi Lagrange hanya mengandung $q$ dan turunan pertamanya menunjukkan bahwa keadaan suatu sistem cukup sempurna untuk digambarkan dengan koordinat umum, dan turunan pertamanya terhadap waktu. Jalannya fungsi Lagrange $t_1$ ke $t_2$ atau integrasi dinyatakan sebagai aksi:
 
 $$
 
 S = \int_{t_1}^{t_2} L(q,\dot{q},t) dt
+
+$$
+
+Di antara seluruh lintasan yang mungkin, partikel pasti memilih lintasan nyata $q(t)$ dengan kecepatan $\dot{q}(t)$ yang membuat Aksi $S$ bernilai stasioner:
+
+$$
+
+\delta S = 0
 
 $$
 
@@ -52,45 +60,4 @@ $$
 
 Besaran $p_i = \frac{\partial L}{\partial \dot{q}_i}$ dikenal sebagai **momentum kanonik (_generalized momentum_)** yang berkonjugasi dengan koordinat $q_i$.
 
-## 4. Contoh Aplikasi: Bandul Sederhana (_Simple Pendulum_)
-
-Tinjaul sebuah bandul bermassa $m$ dengan tali tak-bermassa sepanjang $l$, bergerak di bawah percepatan gravitasi $g$:
-
-1. **Pilihan Koordinat Umum:** Sudut simpangan $\theta$.
-2. **Energi Kinetik:**  
-   Kecepatan linier partikel adalah $v = l\dot{\theta}$, sehingga:
-
-$$
-T = \frac{1}{2} m (l\dot{\theta})^2 = \frac{1}{2} m l^2 \dot{\theta}^2
-$$
-
-3. **Energi Potensial:**  
-   Mengambil acuan potensial nol pada titik gantung:
-
-$$
-V = -mgl \cos\theta
-$$
-
-4. **Lagrangian:**
-
-$$
-L = T - V = \frac{1}{2} m l^2 \dot{\theta}^2 + mgl \cos\theta
-$$
-
-5. **Evaluasi Turunan:**
-
-$$
-\frac{\partial L}{\partial \dot{\theta}} = ml^2 \dot{\theta} \implies \frac{d}{dt}\left( \frac{\partial L}{\partial \dot{\theta}} \right) = ml^2 \ddot{\theta}
-$$
-
-$$
-\frac{\partial L}{\partial \theta} = -mgl \sin\theta
-$$
-
-6. **Persamaan Euler-Lagrange:**
-
-$$
-ml^2 \ddot{\theta} - (-mgl \sin\theta) = 0 \implies \ddot{\theta} + \frac{g}{l}\sin\theta = 0
-$$
-
-Persamaan gerak bandul non-linier berhasil diturunkan tanpa perlu menghitung tegangan tali sama sekali!
+## 4. Contoh Aplikasi: Bandul Berosilasi Vertikal
