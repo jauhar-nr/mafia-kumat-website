@@ -1,44 +1,40 @@
 ---
-title: "Persamaan Gerak & Mekanika Lagrangian"
-slug: "01-persamaan-gerak-lagrangian"
-topic: "mekanika-klasik"
+topic: mekanika-klasik
 chapterNumber: 1
-description: "Pengantar formalisme analitis mekanika Lagrangian, koordinat umum, prinsip aksi Hamilton, dan penurunan persamaan gerak Euler-Lagrange."
+title: Persamaan Gerak
+slug: 01-persamaan-gerak
+description: Pengantar formalisme analitis mekanika Lagrangian, koordinat umum, prinsip aksi Hamilton, dan penurunan persamaan gerak Euler-Lagrange.
 ---
 
 # Bab 1 : Persamaan Gerak (Mekanika Lagrangian)
 
-> **Materi:** Persamaan Gerak & Formalisme Lagrangian  
-> **Referensi:** Goldstein, H., Poole, C., & Safko, J. (2002). *Classical Mechanics* (3rd ed.). Addison-Wesley.  
-> **Penyusun:** Tim Mafia Kumat  
+> **Materi:** Persamaan Gerak  
+> **Referensi:** Landau, L. D., & Lifshitz, E. M. (1972). A shorter course of theoretical physics: Vol. 1. Mechanics and electrodynamics (J. B. Sykes & M. Hamermesh, Trans.). Pergamon Press.  
+> **Penyusun:** Yovan Fabiano Maitlen
 
-Mekanika Newton merumuskan dinamika partikel menggunakan konsep gaya vektor $\vec{F} = \frac{d\vec{p}}{dt}$. Namun, ketika sistem melibatkan kendala (*constraints*) yang rumit—seperti bandul ganda, partikel pada permukaan bola, atau rantai kaku—perhitungan vektor gaya kendala menjadi sangat rumit. 
+Mekanika Newton merumuskan dinamika partikel menggunakan konsep gaya yang merupakan besaran vektor $\vec{F} = \frac{d\vec{p}}{dt}$. Namun, ketika sistem melibatkan kendala (_constraints_) yang rumit—seperti bandul ganda, partikel pada permukaan bola, dan permasalahan lainnya perhitungan menggunakan vektor gaya yang melibatkan kendala menjadi sangat rumit, alih-alih perhitungan skalar. 
 
-Mekanika analitis yang dikembangkan oleh Joseph-Louis Lagrange memecahkan masalah ini dengan merumuskan gerak melalui besaran skalar energi (energi kinetik $T$ dan energi potensial $V$) menggunakan **koordinat umum (*generalized coordinates*)** $q_i$.
+Mekanika analitis yang dikembangkan oleh Joseph-Louis Lagrange memecahkan masalah ini dengan merumuskan gerak melalui energi yang merupakan besaran skalar (energi kinetik $T$ dan energi potensial $V$) menggunakan **koordinat umum (_generalized coordinates_)** $q_i$.
 
-## 1. Koordinat Umum (*Generalized Coordinates*)
+## 1. Koordinat Umum (_Generalized Coordinates_)
 
-Untuk sistem dengan $N$ partikel dan $k$ persamaan kendala holonomik, derajat kebebasan (*degrees of freedom*) sistem adalah:
+Untuk sistem dengan $N$ partikel dan $k$ persamaan kendala holonomik, derajat kebebasan (_degrees of freedom_) sistem adalah:
 
 $$
 n = 3N - k
 $$
 
-Kita dapat mendeskripsikan konfigurasi ruang secara lengkap menggunakan $n$ koordinat independen $q_1, q_2, \dots, q_n$ dan kecepatan umum $\dot{q}_1, \dot{q}_2, \dots, \dot{q}_n$.
+Kita dapat mendeskripsikan konfigurasi ruang secara lengkap menggunakan $n$ dengan menggunakan koordinat umum $q_1, q_2, \dots, q_n$ dan kecepatan umum $\dot{q}_1, \dot{q}_2, \dots, \dot{q}_n$. Penting dipahami bahwa koordinat umum $q$ tidak menyatakan keadaan mekanik suatu sistem, keadaan mekanik suatu sistem digambarkan dengan suatu fungsi yang mengandung koordinat umum $q$, dan kecepatan umum $\dot{q}$.
 
-## 2. Prinsip Aksi Hamilton (*Principle of Least Action*)
+## 2. Prinsip Aksi Minimum (_Principle of Least Action_)
 
-Prinsip dasar yang melandasi seluruh fisika modern menyatakan bahwa: lintasan gerak nyata suatu sistem fisis antara dua titik waktu $t_1$ dan $t_2$ adalah lintasan yang membuat **aksi ($S$) stasioner**:
-
-$$
-\delta S = \delta \int_{t_1}^{t_2} L(q, \dot{q}, t) \, dt = 0
-$$
-
-di mana fungsi **Lagrangian ($L$)** didefinisikan sebagai selisih energi kinetik dan potensial:
+Telah disinggung bahwa keadaan suatu sistem digambarkan oleh suatu fungsi yang mengandung $q$, dan $\dot{q}$. Fungsi tersebut adalah fungsi Lagrange $L(q,\dot{q},t)$:
 
 $$
-L = T - V
+L(q_1, q_2,...,\dot{q_1},\dot{q_2},t)
 $$
+
+atau yang dalam bentuk yang lebih singkat $L(q,\dot{q},t)$
 
 ## 3. Persamaan Euler-Lagrange
 
@@ -48,9 +44,9 @@ $$
 \frac{d}{dt}\left( \frac{\partial L}{\partial \dot{q}_i} \right) - \frac{\partial L}{\partial q_i} = 0, \quad i = 1, 2, \dots, n
 $$
 
-Besaran $p_i = \frac{\partial L}{\partial \dot{q}_i}$ dikenal sebagai **momentum kanonik (*generalized momentum*)** yang berkonjugasi dengan koordinat $q_i$.
+Besaran $p_i = \frac{\partial L}{\partial \dot{q}_i}$ dikenal sebagai **momentum kanonik (_generalized momentum_)** yang berkonjugasi dengan koordinat $q_i$.
 
-## 4. Contoh Aplikasi: Bandul Sederhana (*Simple Pendulum*)
+## 4. Contoh Aplikasi: Bandul Sederhana (_Simple Pendulum_)
 
 Tinjaul sebuah bandul bermassa $m$ dengan tali tak-bermassa sepanjang $l$, bergerak di bawah percepatan gravitasi $g$:
 
