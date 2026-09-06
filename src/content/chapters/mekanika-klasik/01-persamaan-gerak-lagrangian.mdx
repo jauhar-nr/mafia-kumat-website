@@ -134,7 +134,8 @@ Perhatikan suku variasi kecepatan: $\int_{t_1}^{t_2} \frac{\partial L}{\partial 
 
 $$
 
-u = \dfrac{\partial L}{\partial \dot{q}} \implies du = \dfrac{d}{dt}\left(\dfrac{\partial L}{\partial} \dot{q}}\right) dt
+u = \dfrac{\partial L}{\partial \dot{q}} \implies du = \dfrac{d}{dt}\left(\dfrac{\partial L}{\partial \dot{q}}\right) dt
+
 
 $$
 
@@ -145,6 +146,8 @@ $$
 dv = \delta \dot{q} , dt = \dfrac{d}{dt}(\delta q) dt \implies v = \delta q(t)
 
 $$
+
+Menggabungkan keduanya:
 
 $$
 \int_{t_1}^{t_2} \frac{\partial L}{\partial \dot{q}} \frac{d}{dt}(\delta q) , dt = \underbrace{\left[ \frac{\partial L}{\partial \dot{q}} \delta q(t) \right]_{t_1}^{t_2}}_{= , 0 \text{ karena } \delta q(t_1) = \delta q(t_2) = 0} - \int_{t_1}^{t_2} \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}}\right) \delta q(t) , dt
