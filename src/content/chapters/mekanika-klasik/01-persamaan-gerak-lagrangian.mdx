@@ -82,6 +82,40 @@ L(q + \delta q, \dot{q} + \delta \dot{q}, t) = L(q, \dot{q}, t) + \frac{\partial
 
 $$
 
+Variasi lagrangian dapat didefinisikan sebagai lagrangian asli ditambah lagrangian variasi dikurangi lagrangian variasi. Dengan mengabaikan suku orde tinggi $\mathcal{O}(\delta^2)$, variasi Lagrangian $\delta L$ memuat suku posisi ($\delta q$) dan kecepatan ($\delta \dot{q}$):
+
+$$
+
+\delta L = L(q, \dot{q}, t) + \frac{\partial L}{\partial q}\delta q + \frac{\partial L}{\partial \dot{q}}\delta \dot{q} - L(q, \dot{q}, t)
+
+$$
+
+Atau dapat disederhanakan menjadi:
+
+$$
+
+\delta L =  \frac{\partial L}{\partial q}\delta q + \frac{\partial L}{\partial \dot{q}}\delta \dot{q} 
+
+$$
+
+Mengingat bahwa aksi adalah:
+
+$$
+
+S = \int_{t_1}^{t_2} L(q,\dot{q},t) dt
+
+$$
+
+Variasi aksi $\delta{S}$ dapat dinyatakan dengan:
+
+$$
+
+\delta S = \int_{t_1}^{t_2} \delta L \, dt = \int_{t_1}^{t_2} \left( \frac{\partial L}{\partial q}\delta q(t) + \frac{\partial L}{\partial \dot{q}}\frac{d}{dt}\big(\delta q(t)\big) \right) dt = 0
+
+$$
+
+> Itulah mengapa persamaan variasi lagrangian perlu dicari.
+
 ## 3. Persamaan Euler-Lagrange
 
 Melalui kalkulus variasi dengan variasi pada batas lenyap ($\delta q(t_1) = \delta q(t_2) = 0$), diperoleh persamaan diferensial gerak untuk setiap koordinat umum $q_i$:
