@@ -10,7 +10,7 @@ description: Pengantar formalisme analitis mekanika Lagrangian, koordinat umum, 
 
 > **Materi:** Persamaan Gerak  
 > **Referensi:** Landau, L. D., & Lifshitz, E. M. (1972). A shorter course of theoretical physics: Vol. 1. Mechanics and electrodynamics (J. B. Sykes & M. Hamermesh, Trans.). Pergamon Press.  
-> **Penyusun:** Yovan Fabiano Maitlen
+> **Penyusun:** Yovan Fabiano Maitlen, Jauhar Nur Ramadhan
 
 Mekanika Newton merumuskan dinamika partikel menggunakan konsep gaya yang merupakan besaran vektor $\vec{F} = \frac{d\vec{p}}{dt}$. Namun, ketika sistem melibatkan kendala (_constraints_) yang rumit—seperti bandul ganda, partikel pada permukaan bola, dan permasalahan lainnya perhitungan menggunakan vektor gaya yang melibatkan kendala menjadi sangat rumit, alih-alih perhitungan skalar. 
 
@@ -128,14 +128,14 @@ $$
 
 > Itulah mengapa persamaan variasi lagrangian perlu dicari.
 
-Perhatikan suku variasi kecepatan: $\int_{t_1}^{t_2} \frac{\partial L}{\partial \dot{q}} \frac{d}{dt}(\delta q) \, dt$. Gunakan rumus integrasi parsial $\int u \, dv = [u v] - \int v \, du$:
+Perhatikan suku variasi kecepatan: $\int_{t_1}^{t_2} \frac{\partial L}{\partial \dot{q}} \frac{d}{dt}(\delta q) , dt$. Gunakan rumus integrasi parsial $\int u , dv = [u v] - \int v , du$:
 
 - Pemisalan turunan parsial kecepatan: $u = \dfrac{\partial L}{\partial \dot{q}} $\longrightarrow$ du = \dfrac{d}{dt}\left(\dfrac{\partial L}{\partial \dot{q}}\right) dt$
-- Pemisalan variasi kecepatan: $dv = \delta \dot{q} \, dt = \dfrac{d}{dt}(\delta q) dt \implies v = \delta q(t)$
+- Pemisalan variasi kecepatan: $dv = \delta \dot{q} , dt = \dfrac{d}{dt}(\delta q) dt \implies v = \delta q(t)$
 
   $$
 
-\int_{t_1}^{t_2} \frac{\partial L}{\partial \dot{q}} \frac{d}{dt}(\delta q) \, dt = \underbrace{\left[ \frac{\partial L}{\partial \dot{q}} \delta q(t) \right]_{t_1}^{t_2}}_{= \, 0 \text{ (karena } \delta q(t_1) = \delta q(t_2) = 0)} - \int_{t_1}^{t_2} \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}}\right) \delta q(t) \, dt
+\int_{t_1}^{t_2} \frac{\partial L}{\partial \dot{q}} \frac{d}{dt}(\delta q) , dt = \underbrace{\left[ \frac{\partial L}{\partial \dot{q}} \delta q(t) \right]_{t_1}^{t_2}}_{= , 0 \text{ (karena } \delta q(t_1) = \delta q(t_2) = 0)} - \int_{t_1}^{t_2} \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}}\right) \delta q(t) , dt
 
 $$
 
@@ -145,7 +145,7 @@ Substitusikan kembali hasil integrasi parsial suku kecepatan ke dalam ekspresi v
 
 $$
 
-\delta S = \int_{t_1}^{t_2} \left[ \frac{\partial L}{\partial q} - \frac{d}{dt}\left( \frac{\partial L}{\partial \dot{q}} \right) \right] \delta q(t) \, dt = 0
+\delta S = \int_{t_1}^{t_2} \left[ \frac{\partial L}{\partial q} - \frac{d}{dt}\left( \frac{\partial L}{\partial \dot{q}} \right) \right] \delta q(t) , dt = 0
 
 $$
 
