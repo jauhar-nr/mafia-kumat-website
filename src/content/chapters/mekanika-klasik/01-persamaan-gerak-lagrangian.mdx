@@ -50,11 +50,35 @@ $$
 
 $$
 
-Suatu lintasan nyata $q_t$ dapat diganti menjadi lintasan nyata $q_t$ ditambah dengan lintasan variasi $\delta{q(t)}$:
+Suatu lintasan nyata $q(t)$ dapat diganti menjadi lintasan nyata $q(t)$ ditambah dengan lintasan variasi $\delta{q(t)}$:
 
 $$
 
 q(t) \longrightarrow q(t) + \delta{q(t)}
+
+$$
+
+Variasi pada titik awal $(A(t_1))$ dan titik akhir $(A(t_1))$ haruslah nol:
+
+$$
+
+\delta{q(t)_1}= \delta{q(t_2)} = 0
+
+$$
+
+Variasi kecepatan partikel dinyatakan dengan:
+
+$$
+
+\delta \dot{q}(t) = \delta \left( \frac{dq}{dt} \right) = \frac{d}{dt}(\delta q(t))
+
+$$
+
+Perubahan Lagrangian akibat gangguan posisi dan kecepatan $(q + \delta q, \dot{q} + \delta \dot{q})$ diekspansikan menggunakan Taylor dua variabel:
+
+$$
+
+L(q + \delta q, \dot{q} + \delta \dot{q}, t) = L(q, \dot{q}, t) + \frac{\partial L}{\partial q}\delta q + \frac{\partial L}{\partial \dot{q}}\delta \dot{q} + \mathcal{O}(\delta^2)
 
 $$
 
