@@ -3,12 +3,12 @@
   "slug": "mekanika-klasik",
   "track": "Mekanika Klasik",
   "order": 1,
-  "coverImage": "",
+  "coverImage": "/media/MEKANIKA KLASIK LANJUT.png",
   "description": "Formalisasi hukum gerak mulai dari prinsip aksi minimum, mekanika Lagrangian, formalisme Hamiltonian, hingga persamaan kanonik.",
   "authors": [
     "Tim Mafia Kumat"
   ],
   "references": [
-    "Goldstein, H., Poole, C., & Safko, J. (2002). Classical Mechanics (3rd ed.). Addison-Wesley."
+    "Landau, L. D., & Lifshitz, E. M. (1972). A shorter course of theoretical physics: Vol. 1. Mechanics and electrodynamics (J. B. Sykes & M. Hamermesh, Trans.). Pergamon Press."
   ]
 }
