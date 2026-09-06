@@ -122,7 +122,7 @@ Variasi aksi $\delta{S}$ dapat dinyatakan dengan:
 
 $$
 
-\delta S = \int_{t_1}^{t_2} \delta L , dt = \int_{t_1}^{t_2} \left( \frac{\partial L}{\partial q}\delta q(t) + \frac{\partial L}{\partial \dot{q}}\frac{d}{dt}\big(\delta q(t)\big) \right) dt = 0
+\delta S = \int_{t_1}^{t_2} \delta L dt = \int_{t_1}^{t_2} \left( \frac{\partial L}{\partial q}\delta q(t) + \frac{\partial L}{\partial \dot{q}}\frac{d}{dt}\big(\delta q(t)\big) \right) dt = 0
 
 $$
 
@@ -142,14 +142,14 @@ $$
 
 $$
 
-dv = \delta \dot{q} , dt = \dfrac{d}{dt}(\delta q) dt \implies v = \delta q(t)
+dv = \delta \dot{q} dt = \dfrac{d}{dt}(\delta q) dt \implies v = \delta q(t)
 
 $$
 
 Menggabungkan keduanya:
 
 $$
-\int_{t_1}^{t_2} \frac{\partial L}{\partial \dot{q}} \frac{d}{dt}(\delta q) , dt = \underbrace{\left[ \frac{\partial L}{\partial \dot{q}} \delta q(t) \right]_{t_1}^{t_2}}_{= , 0 \text{ karena } \delta q(t_1) = \delta q(t_2) = 0} - \int_{t_1}^{t_2} \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}}\right) \delta q(t) , dt
+\int_{t_1}^{t_2} \frac{\partial L}{\partial \dot{q}} \frac{d}{dt}(\delta q) dt = \underbrace{\left[ \frac{\partial L}{\partial \dot{q}} \delta q(t) \right]_{t_1}^{t_2}}_{= 0 \text{ karena } \delta q(t_1) = \delta q(t_2) = 0} - \int_{t_1}^{t_2} \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}}\right) \delta q(t) dt
 $$
 
 Suku batas hilang secara mutlak karena posisi titik ujung awal dan akhir partikel terfiksasi.
@@ -157,7 +157,7 @@ Suku batas hilang secara mutlak karena posisi titik ujung awal dan akhir partike
 Substitusikan kembali hasil integrasi parsial suku kecepatan ke dalam ekspresi variasi aksi $\delta S$:
 
 $$
-\delta S = \int_{t_1}^{t_2} \left[ \frac{\partial L}{\partial q} - \frac{d}{dt}\left( \frac{\partial L}{\partial \dot{q}} \right) \right] \delta q(t) , dt = 0
+\delta S = \int_{t_1}^{t_2} \left[ \frac{\partial L}{\partial q} - \frac{d}{dt}\left( \frac{\partial L}{\partial \dot{q}} \right) \right] \delta q(t) dt = 0
 $$
 
 # 3. Persamaan Euler-Lagrange
