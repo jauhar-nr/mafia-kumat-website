@@ -62,7 +62,7 @@ $$
 
 > lintasan bayangan (variasi) $\delta{q(t)}$ merupakan lintasan pergeseran dari lintasan asli. 
 
-Karena semua lintasan bayangan (variasi) harus pada bermula titik awal $(A(t_1))$ dan titik akhir $(B(t_2))$ yang sama (tidak ada pergeseran dari lintasan asli). Variasi pada titik awal $(A(t_1))$ dan titik akhir $(B(t_2))$ nol:
+Karena semua lintasan bayangan (variasi) harus pada bermula titik awal $(A(t_1))$ dan titik akhir $(B(t_2))$ yang sama (tidak ada pergeseran dari lintasan asli). Variasi pada titik awal $(A(t_1))$ dan titik akhir $(B(t_2))$ nol (terfiksasi):
 
 $$
 
@@ -128,9 +128,30 @@ $$
 
 > Itulah mengapa persamaan variasi lagrangian perlu dicari.
 
+Perhatikan suku variasi kecepatan: $\int_{t_1}^{t_2} \frac{\partial L}{\partial \dot{q}} \frac{d}{dt}(\delta q) \, dt$. Gunakan rumus integrasi parsial $\int u \, dv = [u v] - \int v \, du$:
+
+- Pemisalan turunan parsial kecepatan: $u = \dfrac{\partial L}{\partial \dot{q}} $\longrightarrow$ du = \dfrac{d}{dt}\left(\dfrac{\partial L}{\partial \dot{q}}\right) dt$
+- Pemisalan variasi kecepatan: $dv = \delta \dot{q} \, dt = \dfrac{d}{dt}(\delta q) dt \implies v = \delta q(t)$
+
+  $$
+
+\int_{t_1}^{t_2} \frac{\partial L}{\partial \dot{q}} \frac{d}{dt}(\delta q) \, dt = \underbrace{\left[ \frac{\partial L}{\partial \dot{q}} \delta q(t) \right]_{t_1}^{t_2}}_{= \, 0 \text{ (karena } \delta q(t_1) = \delta q(t_2) = 0)} - \int_{t_1}^{t_2} \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}}\right) \delta q(t) \, dt
+
+$$
+
+Suku batas hilang secara mutlak karena posisi titik ujung awal dan akhir partikel terfiksasi.
+
+Substitusikan kembali hasil integrasi parsial suku kecepatan ke dalam ekspresi variasi aksi $\delta S$:
+
+$$
+
+\delta S = \int_{t_1}^{t_2} \left[ \frac{\partial L}{\partial q} - \frac{d}{dt}\left( \frac{\partial L}{\partial \dot{q}} \right) \right] \delta q(t) \, dt = 0
+
+$$
+
 ## 3. Persamaan Euler-Lagrange
 
-Melalui kalkulus variasi dengan variasi pada batas lenyap ($\delta q(t_1) = \delta q(t_2) = 0$), diperoleh persamaan diferensial gerak untuk setiap koordinat umum $q_i$:
+Karena variasi lintasan partikel $\delta q(t)$ bersifat \textbf{sembarang (arbitrer)}, maka fungsi di dalam kurung siku \textbf{harus bernilai nol secara identik} pada setiap waktu $t$:
 
 $$
 \frac{d}{dt}\left( \frac{\partial L}{\partial \dot{q}_i} \right) - \frac{\partial L}{\partial q_i} = 0, \quad i = 1, 2, \dots, n
