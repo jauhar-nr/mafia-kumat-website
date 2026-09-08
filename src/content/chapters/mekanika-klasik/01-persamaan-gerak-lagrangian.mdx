@@ -200,12 +200,42 @@ $$
 
 \begin{aligned}
 
-      T &= \frac{1}{2}m(\dot{x}^2 + \dot{y}^2) \\
+      T &= \frac{1}{2}m(\dot{x}^2 + \dot{y}^2) \
 
-        &= \frac{1}{2}m l^2 \dot{\phi}^2 + m l a \gamma \dot{\phi} \sin \phi \sin \gamma t + \frac{1}{2}m a^2 \gamma^2 \sin^2 \gamma t \\[0.15cm]
+        &= \frac{1}{2}m l^2 \dot{\phi}^2 + m l a \gamma \dot{\phi} \sin \phi \sin \gamma t + \frac{1}{2}m a^2 \gamma^2 \sin^2 \gamma t \[0.15cm]
 
       V &= -m g y = -m g l \cos \phi - m g a \cos \gamma t
 
     \end{aligned}
 
 $$
+
+Lagrangian lengkap:
+
+$$
+
+L = \frac{1}{2}m l^2 \dot{\phi}^2 + m l a \gamma \dot{\phi} \sin \phi \sin \gamma t + m g l \cos \phi + \left( \frac{1}{2}m a^2 \gamma^2 \sin^2 \gamma t + m g a \cos \gamma t \right)
+
+$$
+
+Lagrangian disederhanakan dengan dua aturan dasar:
+
+1. **Mengabaikan Suku Fungsi Waktu Murni $f(t)$:**
+
+$$
+
+\frac{1}{2}m a^2 \gamma^2 \sin^2 \gamma t + m g a \cos \gamma t
+
+$$
+
+Suku ini tidak memuat variabel $\phi$ maupun $\dot{\phi}$, sehingga memberikan kontribusi nol pada persamaan gerak.
+
+2. **Mengabaikan Turunan Waktu Total dari Fungsi $m l a \gamma \sin \gamma t \cos \phi$:**
+
+$$
+
+\frac{d}{dt}\big( m l a \gamma \sin \gamma t \cos \phi \big) = m l a \gamma^2 \cos \gamma t \cos \phi - m l a \gamma \dot{\phi} \sin \phi \sin \gamma t
+
+$$
+
+Suku silang $m l a \gamma \dot{\phi} \sin \phi \sin \gamma t$ dapat digantikan oleh $m l a \gamma^2 \cos \gamma t \cos \phi$ tanpa mengubah persamaan gerak.
