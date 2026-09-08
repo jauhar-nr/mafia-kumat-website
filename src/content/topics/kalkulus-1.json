@@ -1,0 +1,14 @@
+{
+  "title": "Kalkulus 1",
+  "slug": "kalkulus-1",
+  "track": "Matematika Esensial Fisika",
+  "order": 1,
+  "coverImage": "/media/MAFIA KUMAT-11.png",
+  "description": "Kalkulus 1 akan mempelajari mengenai perubahan yang sangat kecil, dimulai dari limit hingga persamaan differensial orde 1.",
+  "authors": [
+    "Yovan Fabiano Maitlen"
+  ],
+  "references": [
+    "Varberg, D., Purcell, E. J., & Rigdon, S. E. (2010). Kalkulus (I. N. Susila, Trans.; Edisi ke-9, Jil. 1). Erlangga."
+  ]
+}
