@@ -9,7 +9,9 @@ description: |-
   Penyusun: Yovan Fabiano Maitlen
 ---
 
-# 1. Limit Fungsi Aljabar
+## 1. Limit Fungsi Aljabar
+
+### 1.1 Definisi Intuitif Limit
 
 Diberikan sebuah fungsi:
 
@@ -51,4 +53,58 @@ $$
 
 Tampak dengan jelas bila $x$ pada $f(x)$ diganti dengan nilai yang mendekati 2 baik dari nilai yang lebih atau kurang dari 2 nilai $f(x)$ akan mendekati 4. Berdasar "percobaan" di atas kita dapat membuat definisi intuitif tentang limit:
 
-> Pada $\lim \limits_{x \to c} f(x) = L $ nilai x mendekati c namun berlainan dengan c maka, nilai $f(x)$ akan mendekati $L$ namun berlainan dengan $L$.
+> Pada $\lim \limits_{x \to c} f(x) = L $ nilai x mendekati c namun berlainan dengan c maka, nilai $f(x)$ akan mendekati $L$ namun berlainan dengan $L$
+
+### 2. Cara Menentukan Limit 
+
+Ketika suatu fungsi $f(x)$ diberikan nilai $x=c$ sehingga $f(c)$ tidak menghasilkan nilai yang tak terdefinisi, maka limit dapat dicari dengan substitusi langsung. Contoh: 
+
+Diberikan sebuah fungsi:
+
+$$
+
+f(x} = x^2 + 3x
+
+$$
+
+Tentukan: 
+
+$$
+
+\lim \limits_{x \to 3} f(x) = 3^2 + 9 = 9 + 9 = 18
+
+$$
+
+Ketika suatu fungsi $f(x)$ yang umumnya berbentuk pecahan diberikan nilai $x=c$ sehingga $f(c)$ menghasilkan nilai yang tak terdefinisi atau berbentuk $\frac{a}{0}$, maka limit dapat dicari dengan metode pemfaktoran. Contoh: 
+
+Diberikan sebuah fungsi:
+
+$$
+
+f(x) = \frac{x^2-4}{x-2}
+
+$$
+
+Tentukan:
+
+$$
+
+\lim \limits_{x \to 2} f(x) 
+
+$$
+
+Bentuk fungsi tersebut dapat difaktorkan sehingga menjadi:
+
+$$
+
+f(x) = \frac{x^2-4}{x-2} = \frac{(x-2)(x+2)}{x-2} = x + 2
+
+$$
+
+Sehingga menjadi:
+
+$$
+
+\lim \limits_{x \to 2} f(x) = 2 + 2 = 4
+
+$$
