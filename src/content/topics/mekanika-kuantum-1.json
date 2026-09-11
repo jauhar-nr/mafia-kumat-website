@@ -3,10 +3,12 @@
   "slug": "mekanika-kuantum-1",
   "track": "Fisika & Mekanika Kuantum",
   "order": 2,
-  "coverImage": "",
+  "coverImage": "/media/MAFIA KUMAT-12.png",
   "description": "Pembahasan fenomena mikroskopik dengan pendekatan formal matematis, mulai dari metode matematika untuk mekanika kuantum (ruang Hilbert, notasi bra-ket Dirac) hingga teori gangguan.",
   "authors": [
-    "Yovan Fabiano Maitlen"
+    "Yovan Fabiano Maitlen",
+    "Imaddudin Akmal",
+    "Naufal Lutfian Hakim"
   ],
   "references": [
     "Zettili, N. (2009). Quantum Mechanics: Concepts and Applications (2nd ed.). John Wiley & Sons."
